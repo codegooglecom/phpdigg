@@ -1,0 +1,36 @@
+@CHARSET "UTF-8";
+
+.g-panel {
+	position: absolute;
+	min-width: 240px;
+	/*width: 320px;*/
+	
+	float: left;
+	text-align: left;
+}
+
+.g-panel .hd {
+	border-style: solid solid solid;
+	border-width: 1px 1px 0;
+	border-color: #7AA5D6 #C5D7EF #C5D7EF;
+	
+	background-color: #E5ECF9;
+	
+	height: 20px;
+	line-height: 20px;
+}
+
+.g-panel .bd {
+	border: solid 1px #C5D7EF;
+	background-color: #FFFFFF;
+	
+	min-height: 240px;
+}
+
+.g-panel .ft {
+	border: solid 1px #C5D7EF;
+	border-style: none solid solid;
+	
+	background-color: #FFFFFF;
+}
+
