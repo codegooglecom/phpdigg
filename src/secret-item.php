@@ -38,7 +38,7 @@ function get_new_pdo() {
 function new_digg_item($update, $name) {
 	try {
 		$pdo = get_new_pdo();
-		$sql = "INSERT INTO digg_item (digg_item_name, digg_item_desc) VALUES (:name, :desc);";
+		$sql = "INSERT INTO digg_item (digg_item_name, digg_item_content) VALUES (:name, :desc);";
 		$statement = $pdo->prepare($sql);
 		$result = $statement->execute(array(
 			"name" => $name,
@@ -82,7 +82,7 @@ function index_digg_item() {
 	try {
 		$pdo = get_new_pdo();
 
-		$sql = "SELECT digg_item_id AS id, digg_item_name AS name, digg_item_desc AS content, digg_item_recommend AS count FROM digg_item ORDER BY digg_item_recommend DESC;";
+		$sql = "SELECT digg_item_id AS id, digg_item_name AS name, digg_item_content AS content, digg_item_recommend AS count FROM digg_item ORDER BY digg_item_recommend DESC;";
 		$statement = $pdo->prepare($sql);
 		$statement->execute();
 

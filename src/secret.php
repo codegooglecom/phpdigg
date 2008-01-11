@@ -36,7 +36,7 @@ $index_digg_item = index_digg_item();
 	<div class="ft">FOOT</div>
 </div>
 
-<div class="digg-board">
+<div class="digg-board">	
 	<div class="hd">
 		<ul>
 			<li><button class="btn add">添加</button></li>
