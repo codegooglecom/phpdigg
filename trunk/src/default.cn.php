@@ -38,7 +38,7 @@ $index_digg_item = index_digg_item();
 	<div id="content" class="content">
 		<div id="update" class="update">
 			<div class="hd">
-				My one secret...
+				我的小秘密...
 			</div>
 			<div class="bd">
 				<form>
@@ -46,7 +46,7 @@ $index_digg_item = index_digg_item();
 				</form>
 			</div>
 			<div class="ft">
-				<button id="commit">Commit</button>
+				<button id="commit">提交</button>
 			</div>
 		</div>
 		
@@ -61,7 +61,7 @@ $index_digg_item = index_digg_item();
 						<a class="author" href="#">One</a>						
 						<span class="op">
 							<p id="p<?php echo $digg_item["id"]; ?>"><?php echo $digg_item["count"]; ?></p>
-							<button id="<?php echo $digg_item["id"]; ?>" class="digg">Digg</button>
+							<button id="<?php echo $digg_item["id"]; ?>" class="digg">顶一下</button>
 						</span>
 						<span class="content">
 							<?php echo $digg_item["content"]; ?>
@@ -75,7 +75,7 @@ $index_digg_item = index_digg_item();
 			</div>
 			
 			<div class="ft">
-				<button>Next</button>
+				<button>下一页</button>
 			</div>
 		</div>
 	</div>
