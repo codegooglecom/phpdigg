@@ -24,9 +24,9 @@ function new_digg_item_callback(json) {
 	var li = $(
 		"<li>" + 
 				"<a href='#' class='avator'>" +
-					"<img src='images/user.jpg'></img>" +
+					"<img src='images/0.gif'></img>" +
 				"</a>" + 
-				"<a href='#' class='author'>bbiao</a>" + 
+				"<a href='#' class='author'>One</a>" + 
 				"<span class='op'>" +
 					"<p id='p" + record.id + "'>" + record.count + "</p>" +
 					"<button id='" + record.id + "' class='btn digg'>Digg</button>" +

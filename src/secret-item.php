@@ -23,7 +23,7 @@ function get_new_pdo() {
 	);
 	
 	try {
-		$db_config = $config["dbtest"];
+		$db_config = $config["db"];
 		$db_source = "{$db_config["driver"]}:dbname={$db_config["database"]};host={$db_config["host"]};port={$db_config["port"]};charset={$db_config["charset"]}";
 		$pdo = new PDO($db_source, $db_config["username"], $db_config["password"]);
 		return $pdo;
@@ -38,7 +38,7 @@ function get_new_pdo() {
 function new_digg_item($update, $name) {
 	try {
 		$pdo = get_new_pdo();
-		$sql = "INSERT INTO digg_item (digg_item_name, digg_item_content) VALUES (:name, :desc);";
+		$sql = "INSERT INTO digg_item_secret (digg_item_name, digg_item_content) VALUES (:name, :desc);";
 		$statement = $pdo->prepare($sql);
 		$result = $statement->execute(array(
 			"name" => $name,
@@ -59,13 +59,13 @@ function digg_digg_item($id) {
 	try {
 		$pdo = get_new_pdo();
 
-		$sql = "UPDATE digg_item SET digg_item_recommend = digg_item_recommend + 1 WHERE digg_item_id =:id;";
+		$sql = "UPDATE digg_item_secret SET digg_item_recommend = digg_item_recommend + 1 WHERE digg_item_id =:id;";
 		$statement = $pdo->prepare($sql);
 		$statement->execute(array(
 			"id" => $id
 		));
 
-		$sql = "SELECT digg_item_recommend FROM digg_item WHERE digg_item_id =:id;";
+		$sql = "SELECT digg_item_recommend FROM digg_item_secret WHERE digg_item_id =:id;";
 		$statement = $pdo->prepare($sql);
 		$statement->execute(array(
 			"id" => $id
@@ -82,7 +82,7 @@ function index_digg_item() {
 	try {
 		$pdo = get_new_pdo();
 
-		$sql = "SELECT digg_item_id AS id, digg_item_name AS name, digg_item_content AS content, digg_item_recommend AS count FROM digg_item ORDER BY digg_item_recommend DESC;";
+		$sql = "SELECT digg_item_id AS id, digg_item_name AS name, digg_item_content AS content, digg_item_recommend AS count FROM digg_item_secret ORDER BY digg_item_recommend DESC;";
 		$statement = $pdo->prepare($sql);
 		$statement->execute();
 
