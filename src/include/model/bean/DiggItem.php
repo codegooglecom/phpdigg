@@ -7,24 +7,40 @@ class DiggItem {
 
 	private $url;
 
-	private $recommend;
+	private $recommend = 0;
 
-	private $notRecommend;
+	private $notRecommend = 0;
 
 	private $name;
 
 	private $content;
 
-	private $userId;
+	private $userId = 0;
 
-	private $userName;
+	private $userName = "anonymous";
 
-	private $gmtCreate;
+	private $gmtCreate = "0000-00-00";
 
 	public function toJSON() {
 
 	}
 
+	public function toJSONObject() {
+		$jsonObject = array(
+			"id" => $this->id,
+			"img" => $this->img,
+			"url" => $this->url,
+			"recommend" => $this->recommend,
+			"notRecommend" => $this->notRecommend,
+			"name" => $this->name,
+			"content" => $this->content,
+			"userId" => $this->userId,
+			"userName" => $this->userName,
+			"gmtCreate" => $this->gmtCreate
+		);
+		
+		return $jsonObject;
+	}
 	public function getId() {
 		return $this->id;
 	}

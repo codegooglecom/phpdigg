@@ -75,6 +75,10 @@ button {
 	text-align: center;
 }
 
+.board .content .update .share-tool input.tiny {
+	width: 64px;
+}
+
 .board .content .timeline {
 	border: solid 1px #C5D7EF;
 	background-color: #FFFFFF;
@@ -94,6 +98,9 @@ button {
 .board .content .timeline ul li {
 	border-bottom: solid 1px #C7C7C7;	
 	
+	min-height: 80px;
+	height: 80px; 
+	
 	margin: 3px 0;
 	
 	padding: 5px 60px 5px 60px;
@@ -102,6 +109,7 @@ button {
 
 .board .content .timeline ul li a {
 	float: left;
+	overflow: hidden;
 }
 
 .board .content .timeline ul li a img {
@@ -153,6 +161,21 @@ button {
 	float: right;
 }
 
-.board .sidebar bd {
+.board .sidebar .hd {
+	border-style: solid solid none;
+	border-width: 1px;
+	border-color: #7AA5D6 #C5D7EF #C5D7EF;
+	background-color: #E5ECF9;
+	
+	height: 20px;
+	line-height: 20px;
+	
+	padding: 0 5px;
+}
 
+.board .sidebar .bd {
+	border: solid 1px #C5D7EF;
+	background-color: #FFFFFF;
+	
+	padding :5px;
 }

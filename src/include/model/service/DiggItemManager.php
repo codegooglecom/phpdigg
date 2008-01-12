@@ -9,6 +9,10 @@ class DiggItemManager extends BaseManager {
 		$this->dao = new DiggItemDao(Config::getDateSourceName(), Config::$db_user, Config::$db_password);
 	}
 	
+	public function digg($id) {
+		return $this->dao ? $this->dao->digg($id) : null;
+	}
+	
 	public function findByName($name) {
 		return $this->dao ? $this->dao->findByName($name) : NULL;
 	}

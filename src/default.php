@@ -7,7 +7,7 @@
 <script type="text/javascript" src="js/json2.js"></script>
 
 <script type="text/javascript" src="js/jquery-1.2.1.js"></script>
-<script type="text/javascript" src="js/secret.js"></script>
+<script type="text/javascript" src="js/digg.js"></script>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
@@ -21,17 +21,21 @@ pageTracker._trackPageview();
 </head>
 <body>
 <?php
-require_once "secret-item.php";
-$index_digg_item = index_digg_item();
+require_once "digg-item.php";
+$index_digg_item =$action->indexDiggItem();
 ?>
 
 <div id="board" class="board">
 	<div id="sidebar" class="sidebar">
-		<div class="hd"></div>
-		<div class="db">
-			<p>
+		<div class="hd">
+			<span>
+				小秘密是什么？
+			</span>
+		</div>
+		<div class="bd">
+			<span>
 				 这是一个小秘密的发布站点，你可以在这里匿名发布你的小秘密，大家一起来分享，一起来顶！！
-			</p>
+			</span>
 		</div>
 	</div>	
 	
@@ -46,7 +50,21 @@ $index_digg_item = index_digg_item();
 				</form>
 			</div>
 			<div class="ft">
-				<button id="commit">Commit</button>
+				<span id="share" class="share-tool">
+					<label for="share-to-fanfou">Public to <a href="http://www.fanfou.com">fanfou.com</a></label>
+					<input id="share-to-fanfou" name="share-to-fanfou" type="checkbox"></input>
+					
+					<span id="username-n-password" style="display: none;">
+						<label for="fanfou-username">Username:</label>
+						<input id="fanfou-username" name="fanfou-username" type="text" class="tiny"></input>
+						
+						<label for="fanfou-password">Password</label>
+						<input id="fanfou-password" name="fanfou-password" type="password" class="tiny"></input>
+					</span>
+				</span>
+				<span>
+					<button id="commit">Commit</button>
+				</span>
 			</div>
 		</div>
 		
@@ -58,16 +76,18 @@ $index_digg_item = index_digg_item();
 						<a class="avator" href="#">
 							<img src="images/0.gif"></img>
 						</a>
-						<a class="author" href="#">One</a>						
+						<a class="author" href="#">
+							<?php echo $digg_item["userName"]; ?>
+						</a>						
 						<span class="op">
-							<p id="p<?php echo $digg_item["id"]; ?>"><?php echo $digg_item["count"]; ?></p>
+							<p id="p<?php echo $digg_item["id"]; ?>"><?php echo $digg_item["recommend"]; ?></p>
 							<button id="<?php echo $digg_item["id"]; ?>" class="digg">Digg</button>
 						</span>
 						<span class="content">
 							<?php echo $digg_item["content"]; ?>
 						</span>
 						<span class="stamp">
-							01/12/2008
+							<?php echo $digg_item["gmtCreate"]; ?>
 						</span>
 					</li>
 					<?php } ?>
@@ -80,6 +100,6 @@ $index_digg_item = index_digg_item();
 		</div>
 	</div>
 </div>
-
+<?php phpinfo(); ?>
 </body>
 </html>

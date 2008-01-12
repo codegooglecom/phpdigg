@@ -6,6 +6,4 @@ $path = get_include_path();
 $newPath = "." . PATH_SEPARATOR . $dpath;
 set_include_path($newPath);
 
-echo get_include_path();
-
 ?>
