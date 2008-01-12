@@ -18,6 +18,8 @@ class DiggItem {
 	private $userId = 0;
 
 	private $userName = "anonymous";
+	
+	private $uerIp = "0.0.0.0";
 
 	private $gmtCreate = "0000-00-00";
 
@@ -101,8 +103,8 @@ class DiggItem {
 		return $this->userId;
 	}
 
-	public function setUserId($userID) {
-		$this->userId = $userID;
+	public function setUserId($userId) {
+		$this->userId = $userId;
 	}
 
 	public function getUserName() {
@@ -111,6 +113,14 @@ class DiggItem {
 
 	public function setUserName($userName) {
 		$this->userName = $userName;
+	}
+	
+	public function getUserIp() {
+		return $this->userIp;
+	}
+
+	public function setUserIp($userIp) {
+		$this->userIp = $userIp;
 	}
 
 	public function getGmtCreate() {

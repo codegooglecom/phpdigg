@@ -19,6 +19,7 @@ class DiggItemDao extends GenericDao {
 			"name", 
 			"content", 
 			"userId", 
+			"userIp",
 			"userName", 
 			"gmtCreate"
 			),
@@ -30,7 +31,8 @@ class DiggItemDao extends GenericDao {
 			"digg_item_not_recommend", 
 			"digg_item_name", 
 			"digg_item_content", 
-			"user_id", 
+			"user_id",
+			"user_ip", 
 			"user_name", 
 			"gmt_create"
 			));
