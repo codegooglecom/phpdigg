@@ -21,6 +21,9 @@ class DiggItemAction extends Action {
 		$diggItem = new DiggItem();
 		$diggItem->setContent($content);
 		$diggItem->setGmtCreate(date("Y-m-d"));
+		
+		$userIp = $_SERVER["REMOTE_ADDR"];
+		$diggItem->setUserIp($userIp);
 
 		$this->manager->save($diggItem);
 		

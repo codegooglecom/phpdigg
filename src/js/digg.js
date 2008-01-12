@@ -52,7 +52,7 @@ function new_digg_item_callback(json) {
 				"<a href='#' class='avator'>" +
 					"<img src='images/0.gif'></img>" +
 				"</a>" + 
-				"<a href='#' class='author'>One</a>" + 
+				"<a href='#' class='author'>" + record.userName + "</a>" + 
 				"<span class='op'>" +
 					"<p id='p" + record.id + "'>" + record.recommend + "</p>" +
 					"<button id='" + record.id + "' class='btn digg'>Digg</button>" +
