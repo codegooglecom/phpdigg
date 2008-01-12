@@ -21,8 +21,8 @@ class DiggItemDao extends GenericDao {
 			"userId", 
 			"userName", 
 			"gmtCreate"
-		),
-		array(
+			),
+			array(
 			"digg_item_id", 
 			"digg_item_img", 
 			"digg_item_url", 
@@ -30,10 +30,31 @@ class DiggItemDao extends GenericDao {
 			"digg_item_not_recommend", 
 			"digg_item_name", 
 			"digg_item_content", 
-			"userId", 
-			"userName", 
-			"gmtCreate"
+			"user_id", 
+			"user_name", 
+			"gmt_create"
+			));
+	}
+
+	public function digg($id) {
+		$pdo = $this->dataSource->getPdo();
+
+		$tableName = $this->mapping->getTableName();
+		
+		$sql = "UPDATE " . $tableName . " SET digg_item_recommend = digg_item_recommend + 1 WHERE digg_item_id =:id;";
+		$statement = $pdo->prepare($sql);
+		$statement->execute(array(
+			"id" => $id
 		));
+
+		$sql = "SELECT digg_item_recommend FROM " . $tableName . " WHERE digg_item_id =:id;";
+		$statement = $pdo->prepare($sql);
+		$statement->execute(array(
+			"id" => $id
+		));
+
+		$resultArray = $statement->fetch(PDO::FETCH_NUM);
+		return $resultArray[0];
 	}
 
 	public function findByName($name) {
