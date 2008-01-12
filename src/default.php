@@ -100,6 +100,5 @@ $index_digg_item =$action->indexDiggItem();
 		</div>
 	</div>
 </div>
-<?php phpinfo(); ?>
 </body>
 </html>
