@@ -4,8 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>digg</title>
 <link rel="stylesheet" type="text/css" href="css/digg.css" />
-<script type="text/javascript" src="js/jquery-1.2.1.js"></script>
-<script type="text/javascript" src="js/json2.js"></script>
+<script type="text/javascript" src="../js/jquery-1.2.1.js"></script>
+<script type="text/javascript" src="../js/json2.js"></script>
 <script type="text/javascript" src="js/digg.js"></script>
 
 <script type="text/javascript">

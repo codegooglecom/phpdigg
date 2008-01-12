@@ -1,0 +1,35 @@
+@CHARSET "UTF-8";
+
+html body {
+	text-align: center;
+	font-family: Tahoma, Arial, Sans-serif;	
+	font-size: 9pt;
+}
+
+.digg-board {
+	width: 300px;
+}
+
+.digg-btn {
+	font-size: 9pt;
+}
+
+.digg-board th {
+	font-size: 9pt;
+}
+
+.digg-board th input {
+	font-size: 32px;
+}
+
+.digg-board th.price input {
+	width: 64px;
+}
+
+.digg-board td {
+	font-size: 9pt;
+}
+
+.digg-board td.desc {
+	min-width: 200px;
+}
