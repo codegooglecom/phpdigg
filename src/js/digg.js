@@ -9,6 +9,12 @@ $(function() {
 			$("#username-n-password").css("display", "none");
 		}
 	});
+	
+	$("#register-form").hide();
+	$("#register-button").click(function() {
+		$(this).hide();	
+		$("#register-form").fadeIn();
+	});
 });
 
 function new_digg_item() {	
@@ -61,16 +67,20 @@ function new_digg_item_callback(json) {
 					record.content +
 				"</span>" +
 				"<span class='stamp'>" +
-					"01/12/2008" +
+					record.gmtCreate +
 				"</span>" +
 			"</li>"
 	);
 	
 	$(".board .bd ul").prepend(li);
+	li.hide().fadeIn();
 	
 	$("#" + record.id).click(digg_digg_item);
 	
 	$(".update textarea").val("");
+	
+	$("#share-to-fanfou").removeAttr("checked");
+	$("#username-n-password").css("display", "none");
 }
 
 function digg_digg_item() {
