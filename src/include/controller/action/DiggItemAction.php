@@ -19,8 +19,12 @@ class DiggItemAction extends Action {
 		$content = $_POST["content"];
 
 		$diggItem = new DiggItem();
+		
+		$username = $_COOKIE["userName"] ? $_COOKIE["userName"] : "anonymous";
+		$diggItem->setUserName($username);
+		
 		$diggItem->setContent($content);
-		$diggItem->setGmtCreate(date("Y-m-d"));
+		$diggItem->setGmtCreate(date("Y-m-d H:i:s"));
 		
 		$userIp = $_SERVER["REMOTE_ADDR"];
 		$diggItem->setUserIp($userIp);
