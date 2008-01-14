@@ -3,6 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Twitter 'n Digg</title>
+<link rel="stylesheet" type="text/css" href="css/g-panel.css" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
 <script type="text/javascript" src="js/json2.js"></script>
 
@@ -26,43 +27,52 @@ $page = $_GET["page"] ? $_GET["page"] : 1;
 $itemCount = $action->itemCount();
 $index_digg_item =$action->indexDiggItem($page, 10);
 ?>
-<div id="head" class="head">
-	<h2>My secret!</h2>
+<div id="banner" class="banner">
+	<h2>Twitter 'n Digg</h2>
+	<span>Place you can express yourself</span>
 </div>
 <div id="board" class="board">
 	<div id="sidebar" class="sidebar">
-		<div class="hd">
-			<span>
-				小秘密是什么？
-			</span>
-		</div>
-		<div class="bd">
-			<span>
-				 这是一个小秘密的发布站点，你可以在这里匿名发布你的小秘密，大家一起来分享，一起来顶！！
-			</span>
+		<div id="faq">
+			<div class="hd">
+				<span>
+					小秘密是什么？
+				</span>
+			</div>
+			<div class="bd">
+				<span>
+					 这是一个小秘密的发布站点，你可以在这里匿名发布你的小秘密，大家一起来分享，一起来顶！！
+				</span>
+			</div>
 		</div>
 		
-		<div class="bd" style="margin-top: 5px;">
-			<script type="text/JavaScript"> 
-				alimama_pid="mm_10730599_774820_1567895"; 
-				alimama_titlecolor="0000FF"; 
-				alimama_descolor ="000000"; 
-				alimama_bgcolor="FFFFFF"; 
-				alimama_bordercolor="C5D7EF"; 
-				alimama_linkcolor="008000"; 
-				alimama_bottomcolor="FFFFFF"; 
-				alimama_anglesize="6"; 
-				alimama_bgpic="0"; 
-				alimama_icon="0"; 
-				alimama_sizecode="22"; 
-				alimama_width=120; 
-				alimama_height=240; 
-				alimama_type=2; 
-			</script> 
-			<script src="http://a.alimama.cn/inf.js" type=text/javascript> 
-			</script>
+		<?php
+			include_once "template/Authentication.php";
+		?>
+		
+		<div class="add">
+			<div class="bd" style="margin-top: 5px;">
+				<script type="text/JavaScript"> 
+					alimama_pid="mm_10730599_774820_1567895"; 
+					alimama_titlecolor="0000FF"; 
+					alimama_descolor ="000000"; 
+					alimama_bgcolor="FFFFFF"; 
+					alimama_bordercolor="C5D7EF"; 
+					alimama_linkcolor="008000"; 
+					alimama_bottomcolor="FFFFFF"; 
+					alimama_anglesize="6"; 
+					alimama_bgpic="0"; 
+					alimama_icon="0"; 
+					alimama_sizecode="22"; 
+					alimama_width=120; 
+					alimama_height=240; 
+					alimama_type=2; 
+				</script> 
+				<script src="http://a.alimama.cn/inf.js" type=text/javascript> 
+				</script>
+			</div>
 		</div>
-	</div>	
+	</div>
 	
 	<div id="content" class="content">
 		<div id="update" class="update">
@@ -76,14 +86,14 @@ $index_digg_item =$action->indexDiggItem($page, 10);
 			</div>
 			<div class="ft">
 				<span id="share" class="share-tool">
-					<label for="share-to-fanfou">Public to <a href="http://www.fanfou.com">fanfou.com</a></label>
 					<input id="share-to-fanfou" name="share-to-fanfou" type="checkbox"></input>
+					<label for="share-to-fanfou">Public to <a href="http://www.fanfou.com">fanfou.com</a></label>
 					
 					<span id="username-n-password" style="display: none;">
 						<label for="fanfou-username">Username:</label>
 						<input id="fanfou-username" name="fanfou-username" type="text" class="tiny"></input>
 						
-						<label for="fanfou-password">Password</label>
+						<label for="fanfou-password">Password:</label>
 						<input id="fanfou-password" name="fanfou-password" type="password" class="tiny"></input>
 					</span>
 				</span>
