@@ -38,6 +38,10 @@ class BaseManager {
 	public function execute($sql) {
 		return $this->dao ? $this->dao->execute($sql) : NULL;
 	}
+	
+	public function count() {
+		return $this->dao ? $this->dao->count() : null;
+	}
 }
 
 ?>

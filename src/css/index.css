@@ -32,7 +32,21 @@ button {
 	width: 64px;
 	height: 24px;	
 }
-
+.head {
+	border: solid 1px;
+	border-color: #7AA5D6 #C5D7EF #C5D7EF;
+	background-color: #E5ECF9;
+	
+	width: 800px;
+	
+	margin: 10px;
+	padding: 10px;
+	
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+}
+	
 .board {
 	border: solid 1px;
 	border-color: #7AA5D6 #C5D7EF #C5D7EF;
@@ -90,9 +104,21 @@ button {
 .board .content .timeline .ft {
 	border: solid 1px #C5D7EF;
 	
-	text-align: center;
-	margin: 3px 0;
+	margin: 5px;
+	padding: 5px;
+	text-align: right;
+}
+
+/* Pagination */
+.board .content .timeline .ft a {
+	border: solid 1px #C5D7EF;
+	
+	margin: 3px;
 	padding: 3px;
+}
+
+.board .content .timeline .ft a:hover, .current {
+	background-color: #E5ECF9;
 }
 
 .board .content .timeline ul li {
