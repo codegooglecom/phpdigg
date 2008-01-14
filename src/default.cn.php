@@ -37,6 +37,28 @@ $index_digg_item =$action->indexDiggItem();
 				 这是一个小秘密的发布站点，你可以在这里匿名发布你的小秘密，大家一起来分享，一起来顶！！
 			</span>
 		</div>
+		
+				
+		<div class="bd" style="margin-top: 5px;">
+			<script type="text/JavaScript"> 
+				alimama_pid="mm_10730599_774820_1567895"; 
+				alimama_titlecolor="0000FF"; 
+				alimama_descolor ="000000"; 
+				alimama_bgcolor="FFFFFF"; 
+				alimama_bordercolor="C5D7EF"; 
+				alimama_linkcolor="008000"; 
+				alimama_bottomcolor="FFFFFF"; 
+				alimama_anglesize="6"; 
+				alimama_bgpic="0"; 
+				alimama_icon="0"; 
+				alimama_sizecode="22"; 
+				alimama_width=120; 
+				alimama_height=240; 
+				alimama_type=2; 
+			</script> 
+			<script src="http://a.alimama.cn/inf.js" type=text/javascript> 
+			</script>
+		</div>
 	</div>	
 	
 	<div id="content" class="content">
