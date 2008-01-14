@@ -2,118 +2,68 @@
 
 class User {
 	private $id;
-
+	
 	public function getId() {
 		return $this->id;
 	}
-
+	
 	public function setId($id) {
 		$this->id = $id;
 	}
-
-	private $name;
-	private $sex;
-	private $faxNumber;
-	private $groupId;
-	private $corporationId;
-	private $aepInstanceId;
-	private $aepUserId;
-	private $comments;
-	private $creator;
-	private $gmtCreate;
-
-	public function getName() {
-		return $this->name;
+	
+	private $username;
+	private $password;
+	private $email;
+	private $nickname;
+	private $gmtCreate = "0000-00-00 00:00:00";
+	
+	public function getUsername() {
+	return $this->username;
 	}
-
-	public function setName($name) {
-		$this->name = $name;
+	
+	public function setUsername($username) {
+		$this->username = $username;
 	}
-
-	public function getSex() {
-		return $this->sex;
+	
+	public function getPassword() {
+		return $this->password;
 	}
-
-	public function setSex($sex) {
-		$this->sex = $sex;
+	
+	public function setPassword($password) {
+		$this->password = $password;
 	}
-
-	public function getFaxNumber() {
-		return $this->faxNumber;
+	
+	public function getEmail() {
+		return $this->email;
 	}
-
-	public function setFaxNumber($faxNumber) {
-		$this->faxNumber = $faxNumber;
+	
+	public function setEmail($email) {
+		$this->email = $email;
 	}
-
-	public function getGroupId() {
-		return $this->groupId;
+	
+	public function getNickname() {
+		return $this->nickname;
 	}
-
-	public function setGroupId($groupId) {
-		$this->groupId = $groupId;
+	
+	public function setNickname($nickname) {
+		$this->nickname = $nickname;
 	}
-
-	public function getCorporationId() {
-		return $this->corporationId;
-	}
-
-	public function setCorporationId($corporationId) {
-		$this->corporationId = $corporationId;
-	}
-
-	public function getAepInstanceId() {
-		return $this->aepInstanceId;
-	}
-
-	public function setAepInstanceId($aepInstanceId) {
-		$this->aepInstanceId = $aepInstanceId;
-	}
-
-	public function getAepUserId() {
-		return $this->aepUserId;
-	}
-
-	public function setAepUserId($aepUserId) {
-		$this->aepUserId = $aepUserId;
-	}
-
-	public function getComments() {
-		return $this->comments;
-	}
-
-	public function setComments($comments) {
-		$this->comments = $comments;
-	}
-
-	public function getCreator() {
-		return $this->creator;
-	}
-
-	public function setCreator($creator) {
-		$this->creator = $creator;
-	}
-
+	
 	public function getGmtCreate() {
 		return $this->gmtCreate;
 	}
-
+	
 	public function setGmtCreate($gmtCreate) {
 		$this->gmtCreate = $gmtCreate;
 	}
-
-	public function toJSON() {
+	
+	public function toJSONObject() {
 		$temp = array (
 			"id" => $this->id,
-			"name" => $this->name,
-			"sex" => $this->sex,
-			"faxNumber" => $this->faxNumber,
-			"groupId" => $this->groupId,
-			"corporationId" => $this->corporationId,
-			"aepInstanceId" => $this->aepInstanceId,
-			"aepUserId" => $this->aepUserId,
-			"comments" => $this->comments,
-			"creator" => $this->creator,
+			"username" => $this->username,
+			"password" => $this->password,
+			"nickname" => $this->nickname,
+			"email" => $this->email,
 			"gmtCreate" => $this->gmtCreate
 		);
 		

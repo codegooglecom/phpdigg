@@ -29,7 +29,7 @@ $index_digg_item =$action->indexDiggItem($page, 10);
 ?>
 <div id="banner" class="banner">
 	<h2>Twitter 'n Digg</h2>
-	<span>Place you can express yourself</span>
+	<span>Place you can express yourself and listen to others</span>
 </div>
 <div id="board" class="board">
 	<div id="sidebar" class="sidebar">

@@ -22,7 +22,10 @@ class UserAction extends Action {
 	
 	public function login() {
 		$user = $this->manager->findByName($_POST["username"]);
-		if ($user != null && $user->getPassword() == $_POST["password"]) {
+		$password = $_POST["password"];
+		$encryptPassword = md5($password);
+		
+		if ($user != null && $user->getPassword() == $encryptPassword) {
 			setcookie("userId", $user->getId());
 			setcookie("userName", $user->getUsername());
 			
@@ -52,11 +55,21 @@ class UserAction extends Action {
 	}
 
 	public function save() {
+		$username = $_POST["username"];
+		$password = $_POST["password"];
+		$email = $_POST["email"];
 		
+		if (strlen($username) == 0 || strlen($password) == 0 || strlen($email) == 0) {
+			return null;
+		}
+	
 		$user = new User();
-		$user->setUsername($_POST["username"]);
-		$user->setPassword($_POST["password"]);
-		$user->setEmail($_POST["email"]);
+		$user->setUsername($username);
+		
+		$encryptPassword = md5($password);
+		$user->setPassword($encryptPassword);
+		
+		$user->setEmail($email);
 		$user->setGmtCreate(date("Y-m-d H:i:s"));
 
 		$this->manager->save($user);
