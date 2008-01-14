@@ -281,5 +281,17 @@ class GenericDao implements IGenericDao {
 		}
 		return $obj;
 	}
+	
+	public function count() {
+		$tableName =  $this->mapping->getTableName();
+		$query = "SELECT COUNT(*) FROM " . $tableName . ";";
+
+		$pdo = $this->dataSource->getPdo();
+		$statement = $pdo->prepare($query);
+		$statement->execute();
+		$result = $statement->fetch(PDO::FETCH_NUM);
+			
+		return $result[0];
+	}
 }
 ?>

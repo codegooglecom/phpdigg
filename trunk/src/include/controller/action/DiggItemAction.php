@@ -58,14 +58,24 @@ class DiggItemAction extends Action {
 		return $result;
 	}
 	
-	public function indexDiggItem() {
+	public function indexDiggItem($page = 1, $size = 5) {
 		$resultArray = $this->manager->findAll(array(
-			"orderby" => "recommend"
+			"orderby" => "recommend",
+			"pagination" => array(
+				"start" => ($page - 1) * $size ,
+				"size" => $size
+			)
 		));
 		$result = array();
 		foreach($resultArray as $diggItem) {
 			$result[] = $diggItem->toJSONObject();
 		}
+		return $result;
+	}
+	
+	public function itemCount() {
+		$result = $this->manager->count();
+		
 		return $result;
 	}
 }

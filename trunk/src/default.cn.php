@@ -22,9 +22,13 @@ pageTracker._trackPageview();
 <body>
 <?php
 require_once "digg-item.php";
-$index_digg_item =$action->indexDiggItem();
+$page = $_GET["page"] ? $_GET["page"] : 1;
+$itemCount = $action->itemCount();
+$index_digg_item =$action->indexDiggItem($page, 10);
 ?>
-
+<div id="head" class="head">
+	<h2>我的秘密!</h2>
+</div>
 <div id="board" class="board">
 	<div id="sidebar" class="sidebar">
 		<div class="hd">
@@ -38,7 +42,6 @@ $index_digg_item =$action->indexDiggItem();
 			</span>
 		</div>
 		
-				
 		<div class="bd" style="margin-top: 5px;">
 			<script type="text/JavaScript"> 
 				alimama_pid="mm_10730599_774820_1567895"; 
@@ -80,7 +83,7 @@ $index_digg_item =$action->indexDiggItem();
 						<label for="fanfou-username">用户名:</label>
 						<input id="fanfou-username" name="fanfou-username" type="text" class="tiny"></input>
 						
-						<label for="fanfou-password">密码</label>
+						<label for="fanfou-password">密码:</label>
 						<input id="fanfou-password" name="fanfou-password" type="password" class="tiny"></input>
 					</span>
 				</span>
@@ -117,7 +120,7 @@ $index_digg_item =$action->indexDiggItem();
 			</div>
 			
 			<div class="ft">
-				<button>下一页</button>
+				<?php include_once "template/Pagination.php"; ?>
 			</div>
 		</div>
 	</div>

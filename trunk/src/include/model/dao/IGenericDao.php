@@ -55,5 +55,7 @@ interface IGenericDao {
 	 * @param String $sql
 	 */
 	public function execute($sql);
+	
+	public function count();
 }
 ?>

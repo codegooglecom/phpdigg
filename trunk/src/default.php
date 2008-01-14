@@ -22,9 +22,13 @@ pageTracker._trackPageview();
 <body>
 <?php
 require_once "digg-item.php";
-$index_digg_item =$action->indexDiggItem();
+$page = $_GET["page"] ? $_GET["page"] : 1;
+$itemCount = $action->itemCount();
+$index_digg_item =$action->indexDiggItem($page, 10);
 ?>
-
+<div id="head" class="head">
+	<h2>My secret!</h2>
+</div>
 <div id="board" class="board">
 	<div id="sidebar" class="sidebar">
 		<div class="hd">
@@ -116,7 +120,7 @@ $index_digg_item =$action->indexDiggItem();
 			</div>
 			
 			<div class="ft">
-				<button>Next</button>
+				<?php include_once "template/Pagination.php"; ?>
 			</div>
 		</div>
 	</div>
