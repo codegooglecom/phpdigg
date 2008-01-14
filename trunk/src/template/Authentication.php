@@ -25,7 +25,7 @@ if ($username != null) {
 	<div class="bd">
 		<form id="login-form" action="user.php?login" method="post">
 			<div class="form-field">
-				<label for="username">Email:</label>
+				<label for="username">Username:</label>
 				<input id="username" name="username" type="text" class="text"></input>
 			</div>
 					

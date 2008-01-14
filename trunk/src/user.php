@@ -12,7 +12,7 @@ if (isset($_GET["register"])) {
 	if ($result != null) {
 		header("Location: default.php");
 	} else {
-		echo "Username or password wrong.";
+		echo "Error...";
 	}
 //	echo json_encode($result);
 } else if (isset($_GET["login"])) {
