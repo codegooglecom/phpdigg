@@ -8,27 +8,27 @@ class UserDao extends GenericDao {
 	public function __construct($dsn, $username, $password) {
 		parent::__construct($dsn, $username, $password);
 			
-		$this->mapping = new Mapping("User", "DEMO_USER", "id",
-		array("id", "name", "sex", "faxNumber", "groupId", "corporationId", "aepInstanceId", "aepUserId", "comments", "creator", "gmtCreate"),
-		array("USER_ID", "USER_NAME", "SEX", "FAX_NUMBER", "GROUP_ID", "CORPORATION_ID", "AEP_INSTANCEID", "AEP_USERID", "COMMENTS", "CREATOR", "GMT_CREATE"));
+		$this->mapping = new Mapping("User", "digg_user", "id",
+		array("id", "username", "password", "email", "nickname", "gmtCreate"),
+		array("id", "username", "password", "email", "nickname", "gmt_create"));
 	}
 
 	public function findByName($name) {
 		$mappingInfo = $this->mapping->getMappingInfo();
-		$columnName = $mappingInfo["name"];
+		$columnName = $mappingInfo["username"];
 		$tableName = $this->mapping->getTableName();
 			
 		$query = "SELECT * FROM " . $tableName . " WHERE " . $columnName . "=:name;";
-			
+		
 		$pdo = $this->dataSource->getPdo();
 		$statement = $pdo->prepare($query);
 		$statement->execute(array("name" => $name));
-		$result = $statement->fetch(PDO::FETCH_NUM);
+		$result = $statement->fetch(PDO::FETCH_ASSOC);
 			
-		$user = NULL;
-			
+		$user = null;
+
 		if ($result) {
-			$user = new $this->makeObject($result);
+			$user = $this->makeObject($result);
 		}
 			
 		return $user;

@@ -94,7 +94,7 @@ class GenericDao implements IGenericDao {
 			$param[$field] = $obj->$getterMethodName();
 		}
 		$query .= ");";
-		
+
 		$pdo = $this->dataSource->getPdo();
 		$statement = $pdo->prepare($query);
 		$result = $statement->execute($param);
