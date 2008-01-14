@@ -6,4 +6,6 @@ $path = get_include_path();
 $newPath = "." . PATH_SEPARATOR . $dpath;
 set_include_path($newPath);
 
+ini_set("date.timezone", "Asia/Shanghai");
+
 ?>
