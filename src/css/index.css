@@ -1,12 +1,13 @@
 @CHARSET "UTF-8";
 
 * {
+	font-family: Tahoma, Arial, Sans-serif;
 	margin: 0;
 	padding: 0;
 }
 
 html body {
-	font-family: Tahoma, Arial, Sans-Serif;	
+	font-family: Tahoma, Arial, Sans-serif;;	
 	font-size: 9pt;
 	text-align: center;
 }
@@ -26,16 +27,40 @@ a:hover {
 	color: #3169BF;
 }
 
-button {
+button, input.button {
 	border: none;
 	background: url(assets/digg-button-thin.png) left top no-repeat;
 	width: 64px;
 	height: 24px;	
 }
-.head {
-	border: solid 1px;
+
+button.red {
+	background: url(assets/btn-background-red.png) left top no-repeat;
+	color: #FFFFFF;
+}
+
+div.form-field {
+	margin: 0 0 5px;
+}
+
+input.text, input.password, input.tiny {
+	border: solid 1px #C5D7EF;
+	font-size: 12px;
+
+	width: 150px;
+	height: 15px;
+	line-height: 15px;;
+	
+	padding: 3px 4px;
+}
+
+.banner {
+	border-style: solid;
+	border-width: 1px;
 	border-color: #7AA5D6 #C5D7EF #C5D7EF;
 	background-color: #E5ECF9;
+	
+	color: #3366CC;
 	
 	width: 800px;
 	
@@ -76,6 +101,7 @@ button {
 
 .board .content .update textarea {
 	border: solid 1px #C5D7EF;
+	font-family: Tahoma, Helvetica, sans-serif;
 	font-size: 12px;
 	width: 580px;
 	line-height: 120%;
@@ -192,6 +218,7 @@ button {
 	border-width: 1px;
 	border-color: #7AA5D6 #C5D7EF #C5D7EF;
 	background-color: #E5ECF9;
+	color: #3366CC;
 	
 	height: 20px;
 	line-height: 20px;

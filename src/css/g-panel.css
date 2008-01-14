@@ -1,12 +1,13 @@
 @CHARSET "UTF-8";
 
 .g-panel {
-	position: absolute;
+	/*position: absolute;
 	min-width: 240px;
-	/*width: 320px;*/
+	width: 320px;
 	
 	float: left;
-	text-align: left;
+	text-align: left;*/
+	margin: 5px 0;
 }
 
 .g-panel .hd {
@@ -24,7 +25,7 @@
 	border: solid 1px #C5D7EF;
 	background-color: #FFFFFF;
 	
-	min-height: 240px;
+	/*min-height: 240px;*/
 }
 
 .g-panel .ft {
