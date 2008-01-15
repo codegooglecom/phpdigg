@@ -131,8 +131,8 @@ input.text, input.password, input.tiny {
 	text-align: center;
 }
 
-.board .content .update input.tiny {
-	width: 150px;
+.board .content .update input.text {
+	width: 250px;
 }
 
 .board .content .timeline {
@@ -175,7 +175,7 @@ input.text, input.password, input.tiny {
 	overflow: hidden;
 }
 
-.board .content .timeline .bd ul li a {
+.board .content .timeline .bd ul li a.avator, .board .content .timeline .bd ul li a.author {
 	float: left;
 	overflow: hidden;
 }
@@ -230,26 +230,6 @@ input.text, input.password, input.tiny {
 	float: right;
 }
 
-.board .sidebar .hd {
-	border-style: solid solid none;
-	border-width: 1px;
-	border-color: #7AA5D6 #C5D7EF #C5D7EF;
-	background-color: #E5ECF9;
-	color: #3366CC;
-	
-	height: 20px;
-	line-height: 20px;
-	
-	padding: 0 5px;
-}
-
-.board .sidebar .bd {
-	border: solid 1px #C5D7EF;
-	background-color: #FFFFFF;
-	
-	padding :5px;
-}
-
 .board .sidebar .bd iframe {
 	border-style: none;
 	border-size: 0;
@@ -271,4 +251,21 @@ input.text, input.password, input.tiny {
 	text-align: center;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+.box-blue {
+	border: solid 1px #C5D7EF;
+	background-color: #FFFFFF;
+}
+
+.box-yellow {
+	border: solid 1px #FF9900;
+	background-color: #FFEAC0;
+}
+
+.box-top-blue {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #7AA5D6 #C5D7EF #C5D7EF;
+	background-color: #E5ECF9;
 }

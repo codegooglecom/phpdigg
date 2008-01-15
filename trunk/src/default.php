@@ -27,7 +27,7 @@ pageTracker._trackPageview();
 </div>
 <div id="board" class="board">
 	<div id="sidebar" class="sidebar">
-		<div id="faq">
+		<div id="faq" class="g-panel">
 			<div class="hd">
 				<span>
 					小秘密是什么？
@@ -104,7 +104,7 @@ pageTracker._trackPageview();
 					<?php foreach($index_digg_item as $digg_item) { ?>
 					<li>
 						<a class="avator" href="#">
-							<img src="images/<?php echo rand(0, 98); ?>.gif"></img>
+							<img src="images/user_default_medium.gif"></img>
 						</a>
 						<a class="author" href="#">
 							<?php echo $digg_item["userName"]; ?>

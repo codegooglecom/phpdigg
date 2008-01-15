@@ -107,7 +107,7 @@ pageTracker._trackPageview();
 					<?php foreach($index_digg_item as $digg_item) { ?>
 					<li>
 						<a class="avator" href="#">
-							<img src="images/0.gif"></img>
+							<img src="images/user_default_medium.gif"></img>
 						</a>
 						<a class="author" href="#">
 							<?php echo $digg_item["userName"]; ?>
