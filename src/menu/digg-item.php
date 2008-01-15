@@ -23,7 +23,7 @@ function get_new_pdo() {
 	);
 	
 	try {
-		$db_config = $config["dbtest"];
+		$db_config = $config["db"];
 		$db_source = "{$db_config["driver"]}:dbname={$db_config["database"]};host={$db_config["host"]};port={$db_config["port"]};charset={$db_config["charset"]}";
 		$pdo = new PDO($db_source, $db_config["username"], $db_config["password"]);
 		return $pdo;

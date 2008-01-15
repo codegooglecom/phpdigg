@@ -1,0 +1,71 @@
+<ul id="post-panel" class="g-tab-panel-nav">
+  	<li class="g-tab-panel-button selected">
+  		<a href="#message-form">Message</a>
+	</li>
+	<li class="g-tab-panel-button">
+		<a href="#music-form">Music</a>
+	</li>
+	<li class="g-tab-panel-button">
+		<a href="#image-form">Image</a>
+	</li>
+</ul>
+<div class="g-tab-panel-content">
+	<form id="message-form" action="digg-item.php?create" method="post">
+		<div class="form-field">
+			<textarea id="secret" name="secret" rows="4" cols="40"></textarea>
+		</div>
+						
+		<div class="form-field">
+			<input id="share-to-fanfou" name="share-to-fanfou" type="checkbox"></input>
+			<label for="share-to-fanfou">Public to <a href="http://www.fanfou.com">fanfou.com</a></label>
+		</div>
+					
+		<div id="username-n-password" style="display: none;" class="bd">
+			<div class="form-field">
+				<label for="fanfou-username">Username:</label>
+				<input id="fanfou-username" name="fanfou-username" type="text" class="text"></input>
+			</div>
+							
+			<div class="form-field">
+				<label for="fanfou-password">Password:</label>
+				<input id="fanfou-password" name="fanfou-password" type="password" class="text"></input>
+			</div>
+		</div>
+						
+		<div class="form-field">
+			<input id="commit" type="submit" value="Commit" class="button"></input>
+		</div>
+	</form>
+	
+	<form id="music-form" action="digg-item.php?create&type=music" method="post" style="display: none;">
+		<div class="form-field">
+			<label for="name">Music name:</label>
+			<input id="music-name" name="name" type="text" class="text"></input>
+		</div>
+		
+		<div class="form-field">
+			<label for="url">Music URL:</label>
+			<input id="music-url" name="url" type="text" class="text"></input>
+		</div>
+		
+		<div class="form-field">
+			<input id="music-commit" type="submit" value="Commit" class="button"></input>
+		</div>
+	</form>
+	
+	<form id="image-form" action="digg-item.php?create&type=image" method="post" style="display: none;">
+		<div class="form-field">
+			<label for="name">Image name:</label>
+			<input id="image-name" name="name" type="text" class="text"></input>
+		</div>
+		
+		<div class="form-field">
+			<label for="url">Image URL:</label>
+			<input id="image-url" name="url" type="text" class="text"></input>
+		</div>
+		
+		<div class="form-field">
+			<input id="image-commit" type="submit" value="Commit" class="button"></input>
+		</div>
+	</form>
+</div>

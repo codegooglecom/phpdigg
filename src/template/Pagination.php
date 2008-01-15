@@ -13,7 +13,7 @@ if ($previousPage > 0) {
 $itemPerPage = 10;
 for ($i = 0; $i < $itemCount; $i += $itemPerPage) {
 	$p = $i / $itemPerPage + 1;
-	echo "<a href='default.php?page=" . $p . "&tab=" . $tab . "' class='" . ($p == $page ? "current" : "") . "'>" . $p . "</a>";
+	echo "<a href='" . $baseUrl . "?page=" . $p . "&tab=" . $tab . "' class='" . ($p == $page ? "current" : "") . "'>" . $p . "</a>";
 }
 
 if ($i > $page * $itemPerPage) {
