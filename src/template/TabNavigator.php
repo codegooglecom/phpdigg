@@ -2,7 +2,7 @@
 	$tab = $_GET["tab"] ? $_GET["tab"] : "digg";
 	
 	if ($tab != "time" && $tab != "digg") {
-		$tab = "digg";
+		$tab = "time";
 	}
 	
 	$timeClass = $tab == "time" ? " selected" : "";
