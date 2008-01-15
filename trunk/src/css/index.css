@@ -237,3 +237,21 @@ input.text, input.password, input.tiny {
 	border-style: none;
 	border-size: 0;
 }
+
+.footer {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #7AA5D6 #C5D7EF #C5D7EF;
+	background-color: #E5ECF9;
+	
+	color: #3366CC;
+	
+	width: 800px;
+	
+	margin: 10px;
+	padding: 10px;
+	
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
