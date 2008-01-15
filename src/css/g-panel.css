@@ -17,14 +17,19 @@
 	
 	background-color: #E5ECF9;
 	
+	color: #3366CC;
+	
 	height: 20px;
 	line-height: 20px;
+	
+	padding: 0 5px;
 }
 
 .g-panel .bd {
 	border: solid 1px #C5D7EF;
 	background-color: #FFFFFF;
 	
+	padding :5px;
 	/*min-height: 240px;*/
 }
 
