@@ -1,3 +1,3 @@
 <?php
-	header("Location: menu/digg.php");
+	header("Location: default.php");
 ?>

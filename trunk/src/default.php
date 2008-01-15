@@ -21,15 +21,9 @@ pageTracker._trackPageview();
 
 </head>
 <body>
-<?php
-require_once "digg-item.php";
-$page = $_GET["page"] ? $_GET["page"] : 1;
-$itemCount = $action->itemCount();
-$index_digg_item =$action->indexDiggItem($page, 10);
-?>
 <div id="banner" class="banner">
-	<h2>Twitter 'n Digg</h2>
-	<span>Place you can express yourself and listen to others</span>
+	<h2>Twigg</h2>
+	<span>Twitter 'n Digg - Place you can express yourself and listen to others</span>
 </div>
 <div id="board" class="board">
 	<div id="sidebar" class="sidebar">
@@ -50,28 +44,14 @@ $index_digg_item =$action->indexDiggItem($page, 10);
 			include_once "template/Authentication.php";
 		?>
 		
-		<div class="add">
-			<div class="bd" style="margin-top: 5px;">
-				<script type="text/JavaScript"> 
-					alimama_pid="mm_10730599_774820_1567895"; 
-					alimama_titlecolor="0000FF"; 
-					alimama_descolor ="000000"; 
-					alimama_bgcolor="FFFFFF"; 
-					alimama_bordercolor="C5D7EF"; 
-					alimama_linkcolor="008000"; 
-					alimama_bottomcolor="FFFFFF"; 
-					alimama_anglesize="6"; 
-					alimama_bgpic="0"; 
-					alimama_icon="0"; 
-					alimama_sizecode="22"; 
-					alimama_width=120; 
-					alimama_height=240; 
-					alimama_type=2; 
-				</script> 
-				<script src="http://a.alimama.cn/inf.js" type=text/javascript> 
-				</script>
-			</div>
-		</div>
+		<?php
+			include_once "template/Links.html";
+		?>
+		
+		<?php
+			include_once "template/Advertisments.html";
+		?>
+		
 	</div>
 	
 	<div id="content" class="content">
@@ -104,6 +84,9 @@ $index_digg_item =$action->indexDiggItem($page, 10);
 		</div>
 		
 		<div id="timeline" class="timeline">
+			<?php include_once "template/TabNavigator.php"; ?>
+		
+			<?php include_once "template/DataTable.php"; ?>
 			<div class="bd">
 				<ul>
 					<?php foreach($index_digg_item as $digg_item) { ?>

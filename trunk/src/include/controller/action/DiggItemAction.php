@@ -62,9 +62,9 @@ class DiggItemAction extends Action {
 		return $result;
 	}
 	
-	public function indexDiggItem($page = 1, $size = 5) {
+	public function indexDiggItem($page = 1, $size = 5, $order = 'recommend') {
 		$resultArray = $this->manager->findAll(array(
-			"orderby" => "recommend",
+			"orderby" => $order,
 			"pagination" => array(
 				"start" => ($page - 1) * $size ,
 				"size" => $size

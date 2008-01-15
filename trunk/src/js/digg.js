@@ -72,7 +72,7 @@ function new_digg_item_callback(json) {
 			"</li>"
 	);
 	
-	$(".board .bd ul").prepend(li);
+	$("#timeline .bd ul").prepend(li);
 	li.hide().fadeIn();
 	
 	$("#" + record.id).click(digg_digg_item);
