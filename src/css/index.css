@@ -147,7 +147,7 @@ input.text, input.password, input.tiny {
 	background-color: #E5ECF9;
 }
 
-.board .content .timeline ul li {
+.board .content .timeline .bd ul li {
 	border-bottom: solid 1px #C7C7C7;	
 	
 	min-height: 80px;
@@ -159,39 +159,39 @@ input.text, input.password, input.tiny {
 	overflow: hidden;
 }
 
-.board .content .timeline ul li a {
+.board .content .timeline .bd ul li a {
 	float: left;
 	overflow: hidden;
 }
 
-.board .content .timeline ul li a img {
+.board .content .timeline .bd ul li a img {
 	border: solid 1px #C7C7C7;
 		
 	padding: 1px;
 }
 
-.board .content .timeline ul li a:hover img {
+.board .content .timeline .bd ul li a:hover img {
 	border: solid 1px #FF7031;
 }
 
-.board .content .timeline ul li a.avator {
+.board .content .timeline .bd ul li a.avator {
 	margin-left: -55px;
 }
 
-.board .content .timeline ul li a.author {
+.board .content .timeline .bd ul li a.author {
 	margin-right: 3px;
 }
 
-.board .content .timeline ul li span {
+.board .content .timeline .bd ul li span {
 	margin-left: 3px;	
 }
 
-.board .content .timeline ul li span.op {
+.board .content .timeline .bd ul li span.op {
 	margin-right: -55px;
 	float: right;	
 }
 
-.board .content .timeline ul li span.op p {
+.board .content .timeline .bd ul li span.op p {
 	display: block;
 	font-size: 24px;
 	background: url(assets/digg-background.png) left 80% no-repeat;
