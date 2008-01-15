@@ -1,6 +1,6 @@
 $(function() {	
 	$("button.digg").click(digg_digg_item);	
-	$("button#commit").click(new_digg_item);
+	$("#commit").click(new_digg_item);
 	
 	$("#share-to-fanfou").removeAttr("checked").click (function() {
 		if ($(this).attr("checked")) {
@@ -14,6 +14,27 @@ $(function() {
 	$("#register-button").click(function() {
 		$(this).hide();	
 		$("#register-form").fadeIn();
+	});
+	
+	var activeTab = $("#message-form");
+	var activeTabButton = $("#post-panel .g-tab-panel-button.selected");
+	
+	$("#post-panel .g-tab-panel-button a").click(function() {
+		var pos = this.href.search(/#/);
+		var id = this.href.substr(pos);
+		
+		if (activeTab != null) {
+			activeTab.hide();
+		}
+		
+		if (activeTabButton != null) {
+			activeTabButton.removeClass("selected");
+		}
+		
+		activeTab = $(id).show();
+		activeTabButton = $(this).parent().addClass("selected");
+
+		return false;
 	});
 });
 
@@ -48,6 +69,8 @@ function new_digg_item() {
    			success: new_digg_item_callback
  		});
 	}
+	
+	return false;
 }
 
 function new_digg_item_callback(json) {

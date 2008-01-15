@@ -2,11 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Twitter 'n Digg</title>
+<title>望江楼</title>
+<link rel="stylesheet" type="text/css" href="css/g-panel.css" />
 <link rel="stylesheet" type="text/css" href="css/index.css" />
+<link rel="stylesheet" type="text/css" href="css/wjl.css" />
 <script type="text/javascript" src="js/json2.js"></script>
 
-<script type="text/javascript" src="js/jquery-1.2.1.js"></script>
+<script type="text/javascript" src="js/jquery-1.2.2.js"></script>
 <script type="text/javascript" src="js/digg.js"></script>
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -20,14 +22,23 @@ pageTracker._trackPageview();
 
 </head>
 <body>
-<?php
-require_once "digg-item.php";
-$page = $_GET["page"] ? $_GET["page"] : 1;
-$itemCount = $action->itemCount();
-$index_digg_item =$action->indexDiggItem($page, 10);
-?>
-<div id="head" class="head">
-	<h2>我的秘密!</h2>
+<div id="banner" class="banner">
+	<div class="hd">
+		<img src="images/wjl_logo.gif"></img>
+	</div>
+	<div class="bd">
+		<ul>
+			<li><a href="http://www.wjl.cn/">首页</a></li>
+			<li><a href="http://www.xinxiaoqu.cn/shop/" target="_blank">新校区便利店</a></li>
+			<li><a href="http://www.phpbiz.cn" target="_blank">phpBIZ</a></li>
+			<li><a href="http://bbs.wjl.cn/" target="_blank">望江社区</a></li>
+			<li><a href="http://blog.wjl.cn/" target="_blank">望江博客</a></li>
+			<li><a href="http://digg.wjl.cn/" target="_blank">Twigg</a></li>
+			<li><a href="http://www.wjl.cn/map.php" target="_blank">地图</a></li>
+			<li><a href="http://scubt.wjl.cn/" target="_blank">SCUBT</a></li>
+		</ul>
+	</div>
+	
 </div>
 <div id="board" class="board">
 	<div id="sidebar" class="sidebar">
@@ -44,38 +55,19 @@ $index_digg_item =$action->indexDiggItem($page, 10);
 			</div>
 		</div>
 		
-		<div id="login" class="g-panel">
-			<div class="hd">
-				<span>Login</span>
-			</div>
-			<div class="bd">
-			
-			</div>
-		</div>
+		<?php
+			include_once "template/Authentication.php";
+		?>
 		
-		<div class="add">
-			<div class="bd" style="margin-top: 5px;">
-				<script type="text/JavaScript"> 
-					alimama_pid="mm_10730599_774820_1567895"; 
-					alimama_titlecolor="0000FF"; 
-					alimama_descolor ="000000"; 
-					alimama_bgcolor="FFFFFF"; 
-					alimama_bordercolor="C5D7EF"; 
-					alimama_linkcolor="008000"; 
-					alimama_bottomcolor="FFFFFF"; 
-					alimama_anglesize="6"; 
-					alimama_bgpic="0"; 
-					alimama_icon="0"; 
-					alimama_sizecode="22"; 
-					alimama_width=120; 
-					alimama_height=240; 
-					alimama_type=2; 
-				</script> 
-				<script src="http://a.alimama.cn/inf.js" type=text/javascript> 
-				</script>
-			</div>
-		</div>
-	</div>	
+		<?php
+			include_once "template/Links.html";
+		?>
+		
+		<?php
+			include_once "template/Advertisments.html";
+		?>
+		
+	</div>
 	
 	<div id="content" class="content">
 		<div id="update" class="update">
@@ -89,24 +81,27 @@ $index_digg_item =$action->indexDiggItem($page, 10);
 			</div>
 			<div class="ft">
 				<span id="share" class="share-tool">
-					<label for="share-to-fanfou">同时发布到 <a href="http://www.fanfou.com">fanfou.com</a></label>
 					<input id="share-to-fanfou" name="share-to-fanfou" type="checkbox"></input>
+					<label for="share-to-fanfou">Public to <a href="http://www.fanfou.com">fanfou.com</a></label>
 					
 					<span id="username-n-password" style="display: none;">
-						<label for="fanfou-username">用户名:</label>
+						<label for="fanfou-username">Username:</label>
 						<input id="fanfou-username" name="fanfou-username" type="text" class="tiny"></input>
 						
-						<label for="fanfou-password">密码:</label>
+						<label for="fanfou-password">Password:</label>
 						<input id="fanfou-password" name="fanfou-password" type="password" class="tiny"></input>
 					</span>
 				</span>
 				<span>
-					<button id="commit">提交</button>
+					<button id="commit">Commit</button>
 				</span>
 			</div>
 		</div>
 		
 		<div id="timeline" class="timeline">
+			<?php include_once "template/TabNavigator.php"; ?>
+		
+			<?php include_once "template/DataTable.php"; ?>
 			<div class="bd">
 				<ul>
 					<?php foreach($index_digg_item as $digg_item) { ?>
@@ -119,7 +114,7 @@ $index_digg_item =$action->indexDiggItem($page, 10);
 						</a>						
 						<span class="op">
 							<p id="p<?php echo $digg_item["id"]; ?>"><?php echo $digg_item["recommend"]; ?></p>
-							<button id="<?php echo $digg_item["id"]; ?>" class="digg">投票</button>
+							<button id="<?php echo $digg_item["id"]; ?>" class="digg">Digg</button>
 						</span>
 						<span class="content">
 							<?php echo $digg_item["content"]; ?>
@@ -138,5 +133,9 @@ $index_digg_item =$action->indexDiggItem($page, 10);
 		</div>
 	</div>
 </div>
+
+<?php
+	include_once "template/Footer.html";
+?>
 </body>
 </html>

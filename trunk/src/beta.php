@@ -60,35 +60,9 @@ pageTracker._trackPageview();
 				My one secret...
 			</div>
 			<div class="bd">
-				<form id="message-form" action="digg-item.php?create" method="post">
-					<div class="form-field">
-						<textarea id="secret" name="secret" rows="4" cols="40"></textarea>
-					</div>
-									
-					<div class="form-field">
-						<input id="share-to-fanfou" name="share-to-fanfou" type="checkbox"></input>
-						<label for="share-to-fanfou">Public to <a href="http://www.fanfou.com">fanfou.com</a></label>
-					</div>
-								
-					<div id="username-n-password" style="display: none;" class="bd">
-						<div class="form-field">
-							<label for="fanfou-username">Username:</label>
-							<input id="fanfou-username" name="fanfou-username" type="text" class="text"></input>
-						</div>
-										
-						<div class="form-field">
-							<label for="fanfou-password">Password:</label>
-							<input id="fanfou-password" name="fanfou-password" type="password" class="text"></input>
-						</div>
-					</div>
-									
-					<div class="form-field">
-						<input id="commit" type="submit" value="Commit" class="button"></input>
-					</div>
-				</form>
+				<?php include_once "template/PostPanel.html"; ?>
 			</div>
 			<div class="ft">
-				
 			</div>
 		</div>
 		

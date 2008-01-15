@@ -1,0 +1,32 @@
+@CHARSET "UTF-8";
+
+.banner {
+	border-style: none;
+	background-color: transparent;
+	width: 822px;
+	padding: 0;
+}
+
+.banner .bd {
+	border: solid 1px #C5D7EF;	
+}
+
+.banner .bd ul {
+	padding: 5px 3px;
+}
+
+.banner .bd ul li {
+	display: inline;
+}
+
+.banner .bd ul li a {
+	color: #3366CC;
+	
+	padding: 3px;
+}
+
+.banner .bd ul li a:hover {
+	background-color: #3366CC;
+	color: #FFFFFF;
+	text-decoration: none;
+}
