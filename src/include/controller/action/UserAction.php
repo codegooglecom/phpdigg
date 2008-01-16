@@ -112,10 +112,8 @@ class UserAction extends Action {
 			mkdir($uploadDir);
 		}
 		
-		print_r($_FILES['avator']);
 		$uploadfile = $uploadDir . basename($_FILES['avator']['name']);
 		
-		echo $uploadfile;
 		move_uploaded_file($_FILES['avator']['tmp_name'], $uploadfile);
 		
 		$userId = $_COOKIE["userId"];
