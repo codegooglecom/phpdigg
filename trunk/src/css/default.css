@@ -1,0 +1,241 @@
+@CHARSET "UTF-8";
+
+.banner {
+	width: 800px;
+	
+	margin: 10px;
+	padding: 10px;
+	
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+}
+	
+.board {	
+	width: 800px;
+	ming-height: 480px;
+	
+	margin: 10px;
+	padding: 10px;
+	
+	text-align: left;
+	margin-left: auto;
+	margin-right: auto;
+} 
+
+.board .content {	
+	width: 600px;
+}
+
+.board .content .update {
+	border: solid 1px #C5D7EF;
+	background-color: #FFFFFF;
+	
+	padding: 5px;
+}
+
+.board .content .update form {
+	/*border: solid 1px #C5D7EF;
+	padding: 10px;*/
+	
+	margin: 3px 0;
+}
+
+.board .content .update textarea {
+	border: solid 1px #C5D7EF;
+	font-size: 12px;
+	width: 580px;
+	line-height: 120%;
+
+	padding: 3px;
+	overflow: auto;
+}
+
+.board .content .update .ft {
+	text-align: center;
+}
+
+.board .content .update input.text {
+	width: 250px;
+}
+
+.board .content .timeline {
+	border: solid 1px #C5D7EF;
+	background-color: #FFFFFF;
+	
+	margin: 10px 0 0;
+	padding: 5px;
+}
+
+.board .content .timeline .ft {
+	border: solid 1px #C5D7EF;
+	
+	margin: 5px;
+	padding: 5px;
+	text-align: right;
+}
+
+/* Pagination */
+.board .content .timeline .ft a {
+	border: solid 1px #C5D7EF;
+	
+	margin: 3px;
+	padding: 3px;
+}
+
+.board .content .timeline .ft a:hover, .current {
+	background-color: #E5ECF9;
+}
+
+.board .content .timeline .bd ul li {
+	border-bottom: solid 1px #C7C7C7;	
+	
+	min-height: 80px;
+	height: 80px; 
+	
+	margin: 3px 0;
+	
+	padding: 5px 60px 5px 60px;
+	overflow: hidden;
+}
+
+.board .content .timeline .bd ul li a.avator, .board .content .timeline .bd ul li a.author {
+	float: left;
+	overflow: hidden;
+}
+
+.board .content .timeline .bd ul li a img {
+	border: solid 1px #C7C7C7;
+	width: 48px;
+	height: 48px;
+	padding: 1px;
+}
+
+.board .content .timeline .bd ul li a:hover img {
+	border: solid 1px #FF7031;
+}
+
+.board .content .timeline .bd ul li a.avator {
+	margin-left: -55px;
+}
+
+.board .content .timeline .bd ul li a.author {
+	margin-right: 3px;
+}
+
+.board .content .timeline .bd ul li span {
+	margin-left: 3px;	
+}
+
+.board .content .timeline .bd ul li span.op {
+	background: url(assets/vote.png) left top no-repeat;
+	width: 54px;
+	height: 71px;
+	
+	margin-right: -55px;
+	float: right;	
+}
+
+.board .content .timeline .bd ul li span.op p {
+	display: block;
+	font-size: 24px;
+	/*background: url(assets/digg-background.png) left 80% no-repeat;*/
+	width: 54px;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+	margin-bottom: 3px;	
+}
+
+.board .content .timeline .bd ul li span.op button {
+	display: block;
+	background: transparent;
+	width: 54px;
+	
+	margin-top: -4px;
+	padding: 0;
+}
+
+.board .sidebar {
+	border: solid 1px #C5D7EF;
+	background-color: #FFFFFF;
+	
+	width: 180px;
+	min-height: 200px;
+
+	padding: 5px;
+	float: right;
+}
+
+.board .sidebar .bd iframe {
+	border-style: none;
+	border-size: 0;
+}
+
+.footer {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #7AA5D6 #C5D7EF #C5D7EF;
+	background-color: #E5ECF9;
+	
+	color: #3366CC;
+	
+	width: 800px;
+	
+	margin: 10px;
+	padding: 10px;
+	
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.banner {
+	/*border-style: none;
+	background-color: transparent;
+	width: 822px;
+	padding: 0;*/
+}
+
+.banner .bd {
+	/*border: solid 1px #C5D7EF;*/	
+}
+
+.banner .bd ul {
+	padding: 5px 3px;
+	text-align: right;
+}
+
+.banner .bd ul li {
+	display: inline;
+}
+
+.banner .bd ul li a {
+	color: #3366CC;
+	
+	padding: 3px;
+}
+
+.banner .bd ul li a:hover {
+	background-color: #3366CC;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+
+.footer {
+	background-color: #FFFFFF;
+}
+
+.footer .bd span {
+	display: block;
+	
+	margin: 5px;
+}
+
+.avator {
+	max-width: 168px;
+}
+
+#welcome span {
+	display: block;
+}
