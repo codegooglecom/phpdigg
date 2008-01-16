@@ -86,6 +86,48 @@ class UserAction extends Action {
 		$this->destroyCookie();
 	}
 
+	public function getLoginUser() {
+		$userid = $_COOKIE["userId"];
+		
+		if ($userid == null || strlen($userid) == 0) {
+			return null;
+		} else {
+			$user = $this->manager->findById($userid);
+			
+			return $user;		
+		}
+	
+	}
+	
+	public function updateAvator() {
+		$uploadDir = "upload/";
+		
+		if (!file_exists($uploadDir)) {
+			mkdir($uploadDir);
+		}
+		
+		$uploadDir .= date("Y-m-d") . '/';
+		
+		if (!file_exists($uploadDir)) {
+			mkdir($uploadDir);
+		}
+		
+		print_r($_FILES['avator']);
+		$uploadfile = $uploadDir . basename($_FILES['avator']['name']);
+		
+		echo $uploadfile;
+		move_uploaded_file($_FILES['avator']['tmp_name'], $uploadfile);
+		
+		$userId = $_COOKIE["userId"];
+		
+		$this->manager->update(array(
+			"id" => $userId,
+			"avatorUrl" => $uploadfile
+		));
+		
+		return $uploadfile;		
+	}
+	
 	private function destroyCookie() {
 		$cookie = array (			
 			"userName" => NULL,			#-2, -1, 0, 1
