@@ -17,8 +17,18 @@ class User {
 	private $nickname;
 	private $gmtCreate = "0000-00-00 00:00:00";
 	
+	private $avatorUrl = "images/user_default_medium.gif";
+	
+	public function getAvatorUrl() {
+		return $this->avatorUrl;
+	}
+	
+	public function setAvatorUrl($avatorUrl) {
+		$this->avatorUrl = $avatorUrl;
+	}
+	
 	public function getUsername() {
-	return $this->username;
+		return $this->username;
 	}
 	
 	public function setUsername($username) {
