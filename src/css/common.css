@@ -1,0 +1,98 @@
+@CHARSET "UTF-8";
+
+* {
+	font-family: Tahoma, Arial, Sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+html body {
+	font-family: Tahoma, Arial, Sans-serif;;	
+	font-size: 9pt;
+	text-align: center;
+}
+
+ul, ol {
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+	color: #3169BF;
+}
+
+button, input.button {
+	border: none;
+	background: url(assets/digg-button-thin.png) left top no-repeat;
+	width: 64px;
+	height: 24px;	
+}
+
+button.red {
+	background: url(assets/btn-background-red.png) left top no-repeat;
+	color: #FFFFFF;
+}
+
+div.form-field {
+	margin: 0 0 5px;
+}
+
+div.form-field label {
+	display: -moz-inline-stack;
+	*display: inline-block;
+	min-width: 80px;
+}
+
+div.form-field label a {
+	margin-left: 60px;	
+	*margin-left: 0;	
+}
+
+input.text, input.password, input.tiny {
+	border: solid 1px #C5D7EF;
+	font-size: 12px;
+
+	width: 150px;
+	height: 15px;
+	line-height: 15px;;
+	
+	padding: 3px 4px;
+}
+
+.box-blue {
+	border: solid 1px #C5D7EF;
+	background-color: #E5ECF9;
+	
+	color: #3366CC;
+}
+
+.box-yellow {
+	border: solid 1px #FF9900;
+	background-color: #FFEAC0;
+}
+
+.box-top-blue {	
+	border-style: solid;
+	border-width: 1px;
+	border-color: #7AA5D6 #C5D7EF #C5D7EF;
+	background-color: #E5ECF9;
+	
+	color: #3366CC;
+}
+
+.wrapper {
+	border: solid 1px #C5D7EF;
+	background-color: #FFFFFF;
+	
+	padding: 0 5px;
+}
+
+.clear {
+	clear: both;
+}
