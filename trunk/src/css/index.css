@@ -204,6 +204,10 @@ input.text, input.password, input.tiny {
 }
 
 .board .content .timeline .bd ul li span.op {
+	background: url(assets/vote.png) left top no-repeat;
+	width: 54px;
+	height: 71px;
+	
 	margin-right: -55px;
 	float: right;	
 }
@@ -211,12 +215,21 @@ input.text, input.password, input.tiny {
 .board .content .timeline .bd ul li span.op p {
 	display: block;
 	font-size: 24px;
-	background: url(assets/digg-background.png) left 80% no-repeat;
-	width: 64px;
+	/*background: url(assets/digg-background.png) left 80% no-repeat;*/
+	width: 54px;
 	height: 48px;
 	line-height: 48px;
 	text-align: center;
 	margin-bottom: 3px;	
+}
+
+.board .content .timeline .bd ul li span.op button {
+	display: block;
+	background: transparent;
+	width: 54px;
+	
+	margin-top: -4px;
+	padding: 0;
 }
 
 .board .sidebar {
