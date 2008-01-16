@@ -20,11 +20,11 @@ class DiggItemAction extends Action {
 
 		$diggItem = new DiggItem();
 		
-		$userid = $_COOKIE["userId"] ? $_COOKIE["userId"] : "0";
-		$username = $_COOKIE["userName"] ? $_COOKIE["userName"] : "anonymous";
+		$userId = $_COOKIE["userId"] ? $_COOKIE["userId"] : "0";
+		$userName = $_COOKIE["userName"] ? $_COOKIE["userName"] : "anonymous";
 		
 		$diggItem->setUserId($userId);
-		$diggItem->setUserName($username);
+		$diggItem->setUserName($userName);
 		
 		$diggItem->setContent($content);
 		$diggItem->setGmtCreate(date("Y-m-d H:i:s"));
