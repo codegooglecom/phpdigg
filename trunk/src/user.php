@@ -28,5 +28,9 @@ if (isset($_GET["register"])) {
 	$result = $action->logout();
 	
 	header("Location: default.php");
+} else if (isset($_GET["avator"])) {
+	$result = $action->updateAvator();
+	
+	//header("Location: default.php");
 }
 ?>

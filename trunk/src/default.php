@@ -4,7 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Twitter 'n Digg</title>
 <link rel="stylesheet" type="text/css" href="css/g-panel.css" />
-<link rel="stylesheet" type="text/css" href="css/index.css" />
+<link rel="stylesheet" type="text/css" href="css/common.css" />
+<link rel="stylesheet" type="text/css" href="css/default.css" />
 <script type="text/javascript" src="js/json2.js"></script>
 
 <script type="text/javascript" src="js/jquery-1.2.2.js"></script>
@@ -21,11 +22,9 @@ pageTracker._trackPageview();
 
 </head>
 <body>
-<div id="banner" class="banner">
-	<h2>Twigg</h2>
-	<span>Twitter 'n Digg - Place you can express yourself and listen to others</span>
-</div>
-<div id="board" class="board">
+<?php include_once "template/Banner.html"; ?>
+
+<div id="board" class="box-blue board">
 	<div id="sidebar" class="sidebar">
 		<div id="faq" class="g-panel">
 			<div class="hd">
