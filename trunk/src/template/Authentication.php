@@ -2,6 +2,13 @@
 $username = $_COOKIE["userName"];
 
 if ($username != null) {
+
+include_once "include/Prepare.php";
+include_once "controller/action/UserAction.php";
+
+$action = new UserAction();
+$user = $action->getLoginUser();
+
 ?>
 
 <div id="welcome" class="g-panel">
@@ -9,8 +16,15 @@ if ($username != null) {
 		<span>Welcome</span>
 	</div>
 	<div class="bd">
-		<?php echo $username; ?>
-		<a href="user.php?logout">Logout</a>
+		<span>
+			<img src="<?php echo $user->getAvatorUrl(); ?>" class="avator"></img>
+		</span>
+		<span>
+			<?php echo $username; ?>
+		</span>
+		<span>
+			<a href="user.php?logout">Logout</a>
+		</span>
 	</div>
 </div>
 
