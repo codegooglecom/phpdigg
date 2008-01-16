@@ -38,7 +38,7 @@ function get_new_pdo() {
 function new_digg_item($desc, $price) {
 	try {
 		$pdo = get_new_pdo();
-		$sql = "INSERT INTO digg_item (digg_item_name, digg_item_desc) VALUES (:name, :desc);";
+		$sql = "INSERT INTO digg_item_menu (digg_item_name, digg_item_desc) VALUES (:name, :desc);";
 		$statement = $pdo->prepare($sql);
 		$result = $statement->execute(array(
 			"name" => $desc,
@@ -59,13 +59,13 @@ function digg_digg_item($id) {
 	try {
 		$pdo = get_new_pdo();
 
-		$sql = "UPDATE digg_item SET digg_item_recommend = digg_item_recommend + 1 WHERE digg_item_id =:id;";
+		$sql = "UPDATE digg_item_menu SET digg_item_recommend = digg_item_recommend + 1 WHERE digg_item_id =:id;";
 		$statement = $pdo->prepare($sql);
 		$statement->execute(array(
 			"id" => $id
 		));
 
-		$sql = "SELECT digg_item_recommend FROM digg_item WHERE digg_item_id =:id;";
+		$sql = "SELECT digg_item_recommend FROM digg_item_menu WHERE digg_item_id =:id;";
 		$statement = $pdo->prepare($sql);
 		$statement->execute(array(
 			"id" => $id
@@ -82,7 +82,7 @@ function index_digg_item() {
 	try {
 		$pdo = get_new_pdo();
 
-		$sql = "SELECT digg_item_id AS id, digg_item_name AS name, digg_item_desc AS price, digg_item_recommend AS count FROM digg_item ORDER BY digg_item_recommend DESC, digg_item_desc ASC;";
+		$sql = "SELECT digg_item_id AS id, digg_item_name AS name, digg_item_desc AS price, digg_item_recommend AS count FROM digg_item_menu ORDER BY digg_item_recommend DESC, digg_item_desc ASC;";
 		$statement = $pdo->prepare($sql);
 		$statement->execute();
 
