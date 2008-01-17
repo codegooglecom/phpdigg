@@ -113,7 +113,7 @@ class DiggItemAction extends Action {
 				"digg" => true
 			);
 
-			setcookie($id, "digg", mktime().time() + 60 * 60 * 48);
+			setcookie($id, "digg", time() + 60 * 60 * 48);
 		} else {
 			$result = array(
 				"id" => $id,

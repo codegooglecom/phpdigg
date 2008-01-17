@@ -26,8 +26,8 @@ class UserAction extends Action {
 		$encryptPassword = md5($password);
 		
 		if ($user != null && $user->getPassword() == $encryptPassword) {
-			setcookie("userId", $user->getId(), mktime().time() + 60 * 60 * 48);
-			setcookie("userName", $user->getUsername(), mktime().time() + 60 * 60 * 48);
+			setcookie("userId", $user->getId(), time() + 60 * 60 * 48);
+			setcookie("userName", $user->getUsername(), time() + 60 * 60 * 48);
 			
 			return $user;
 		} else {
@@ -76,8 +76,8 @@ class UserAction extends Action {
 		
 		$result = array ("success" => true, "id" => $user->getId());
 
-		setcookie("userId", $user->getId(), mktime().time() + 60 * 60 * 48);
-		setcookie("userName", $user->getUsername(), mktime().time() + 60 * 60 * 48);
+		setcookie("userId", $user->getId(), time() + 60 * 60 * 48);
+		setcookie("userName", $user->getUsername(), time() + 60 * 60 * 48);
 
 		return $result;
 	}
