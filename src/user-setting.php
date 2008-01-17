@@ -79,7 +79,7 @@ pageTracker._trackPageview();
 						</div>
 						
 						<div class="form-field">
-							<input type="submit" value="Upload" class="button"></inpu>
+							<input id="avator-form-submit" type="submit" value="Upload" class="button"></inpu>
 						</div>
 					</form>
 				</div>			

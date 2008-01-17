@@ -54,6 +54,8 @@ function ajax_login() {
 		return false;
 	}
 		
+	$("#login-form").hide();	
+	$("#login-form-tip").show();
 	var url = $("#login-form").attr("action") + "&json";
 	var method = $("#login-form").attr("method");
 		
@@ -76,6 +78,8 @@ function ajax_login_callback(data) {
 		$("#login-form").submit();
 	} else {
 		alert("Username or password wrong!");
+		$("#login-form-tip").hide();
+		$("#login-form").show();	
 	}
 }
 

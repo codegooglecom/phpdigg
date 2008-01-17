@@ -1,5 +1,18 @@
 $(function() {
 	$("#avator").change(change_avator_img);
+	$("#avator-form-submit").click(function() {
+		var imgUrl = $("#avator").val();
+		var imgExtPos = imgUrl.lastIndexOf(".");
+		var imgExt = imgUrl.substr(imgExtPos + 1);
+		
+		if(checkImg(imgExt)) {
+			return true;
+		} else {
+			alert("File type not supported!");
+			return false;
+		}
+		
+	});
 });
 
 var allowImgExt = ["jpg", "jpeg", "bmp", "gif", "png"];
@@ -20,5 +33,7 @@ function change_avator_img() {
 	
 	if(checkImg(imgExt)) {
 		$("#avator-preview-img").attr("src", imgUrl);
-	}	
+	} else {
+		$("#avator").val(" ");
+	}
 }
