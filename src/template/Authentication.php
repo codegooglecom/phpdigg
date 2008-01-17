@@ -55,7 +55,7 @@ $user = $action->getLoginUser();
 			</div>
 					
 			<div class="form-field">
-				<input id="submit" type="submit" value="Login" class="button"></input>
+				<input id="login-form-submit" type="submit" value="Login" class="button"></input>
 			</div>
 		</form>
 	</div>

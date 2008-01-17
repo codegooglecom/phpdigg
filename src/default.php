@@ -85,6 +85,9 @@ pageTracker._trackPageview();
 						<input id="commit" type="submit" value="Commit" class="button"></input>
 					</div>
 				</form>
+				
+				<div id="message-form-tip" class="g-tip">
+				</div>
 			</div>
 			<div class="ft">
 				
@@ -133,5 +136,6 @@ pageTracker._trackPageview();
 <?php
 	include_once "template/Footer.html";
 ?>
+
 </body>
 </html>
