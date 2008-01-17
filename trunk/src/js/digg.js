@@ -4,9 +4,9 @@ $(function() {
 	
 	$("#share-to-fanfou").removeAttr("checked").click (function() {
 		if ($(this).attr("checked")) {
-			$("#username-n-password").css("display", "");
+			$("#username-n-password").fadeIn();
 		} else {
-			$("#username-n-password").css("display", "none");
+			$("#username-n-password").fadeOut();
 		}
 	});
 	
