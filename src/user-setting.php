@@ -64,9 +64,9 @@ pageTracker._trackPageview();
 				<div class="hd">User Settings</div>
 				<div class="bd">
 					<div id="avator-preview" class="avator-preview">
-						<img id="avator-preview-img" src="images/user_default_large.gif"></img>
+						<?php include_once "template/GetLoginUserInfo.php"; ?>
+						<img id="avator-preview-img" src="<?php echo $user->getAvatorUrl(); ?>"></img>
 						<div id="info" class="info">
-							<?php include_once "template/GetLoginUserInfo.php"; ?>
 							<span>Username: <?php echo $user->getUsername(); ?></span>
 							<span>Email: <?php echo $user->getEmail(); ?></span>
 							<span>Joined: <?php echo $user->getGmtCreate(); ?></span>
