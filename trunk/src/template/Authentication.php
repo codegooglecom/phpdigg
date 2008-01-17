@@ -58,6 +58,9 @@ $user = $action->getLoginUser();
 				<input id="login-form-submit" type="submit" value="Login" class="button"></input>
 			</div>
 		</form>
+		
+		<div id="login-form-tip" class="g-tip">
+		</div>
 	</div>
 </div>
 		
