@@ -18,11 +18,20 @@ if (isset($_GET["register"])) {
 } else if (isset($_GET["login"])) {
 	$result = $action->login();
 	
-	if ($result != null) {
-		header("Location: default.php");
+	if (isset($_GET["json"])) {
+		$jsonResult = array (
+			"result" => ($result != null)
+		);
+		
+		echo json_encode($jsonResult);
 	} else {
-		echo "Username or password wrong.";
+		if ($result != null) {
+			header("Location: default.php");
+		} else {
+			echo "Username or password wrong.";
+		}
 	}
+	
 //	echo json_encode($result);
 } else if (isset($_GET["logout"])) {
 	$result = $action->logout();
