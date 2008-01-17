@@ -233,9 +233,15 @@
 }
 
 .avator {
-	max-width: 168px;
+	/*max-width: 168px;*/
+	width: 96px;
+	height: 96px;
 }
 
 #welcome span {
 	display: block;
+}
+
+.avator-wrapper {
+	text-align: center;	
 }

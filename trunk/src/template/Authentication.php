@@ -16,7 +16,7 @@ $user = $action->getLoginUser();
 		<span>Welcome</span>
 	</div>
 	<div class="bd">
-		<span>
+		<span id="avator-wrapper" class="avator-wrapper">
 			<img src="<?php echo $user->getAvatorUrl(); ?>" class="avator"></img>
 		</span>
 		<span>
