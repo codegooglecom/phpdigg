@@ -36,6 +36,8 @@ class DiggItemAction extends Action {
 		
 		$result = $diggItem->toJSONObject();
 		
+		$result["avator"] = $this->manager->getUserAvator($userId);
+		
 		return $result;
 	}
 

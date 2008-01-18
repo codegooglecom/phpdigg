@@ -16,5 +16,9 @@ class DiggItemManager extends BaseManager {
 	public function findByName($name) {
 		return $this->dao ? $this->dao->findByName($name) : NULL;
 	}
+	
+	public function getUserAvator($userId) {
+		return $this->dao ? $this->dao->getUserAvator($userId) : NULL;
+	}
 }
 ?>
