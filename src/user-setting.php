@@ -61,7 +61,7 @@ pageTracker._trackPageview();
 	<div id="content" class="content">
 		<div class="wrapper">
 			<div id="user-setting-panel" class="g-panel">
-				<div class="hd">User Settings</div>
+				<div class="hd">设置选项</div>
 				<div class="bd">
 					<?php include_once "template/UserSettingPanel.php"; ?>
 				</div>			

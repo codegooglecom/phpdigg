@@ -1,15 +1,15 @@
 <ul id="user-setting-panel-nav" class="g-tab-panel-nav">
   	<li class="g-tab-panel-button selected">
-  		<a href="#avator-form-panel">Avator</a>
+  		<a href="#avator-form-panel">头像</a>
 	</li>
 	<li class="g-tab-panel-button">
-		<a href="#basic-info-panel">Basic Info</a>
+		<a href="#basic-info-panel">基本信息</a>
 	</li>
 	<li class="g-tab-panel-button">
-		<a href="#detail-info-panel">Detail Info</a>
+		<a href="#detail-info-panel">详细信息</a>
 	</li>
 	<li class="g-tab-panel-button">
-		<a href="#im-bind-panel">IM Bind</a>
+		<a href="#im-bind-panel">帐户绑定</a>
 	</li>
 </ul>
 <div class="g-tab-panel-content">
@@ -22,20 +22,20 @@
 		<form id="avator-form" class="avator-form" enctype="multipart/form-data" action="user.php?avator" method="post">
 			<div class="form-field">
 				<input id="avator" name="avator" type="file"></input>
-				<p>Select your avator image(.gif, .jpeg, .jpg, .bmp, .png)</p>
+				<p>请选择你的头像的图片文件, 类型(.gif, .jpeg, .jpg, .bmp, .png)</p>
 			</div>
 						
 			<div class="form-field">
-				<input id="avator-form-submit" type="submit" value="Upload" class="button"></inpu>
+				<input id="avator-form-submit" type="submit" value="上传" class="button"></inpu>
 			</div>
 		</form>
 	</div>	
 	
 	<div id="basic-info-panel" class="g-tab-content">
 		<div id="info" class="info">
-			<span>Username: <?php echo $user->getUsername(); ?></span>
-			<span>Email: <?php echo $user->getEmail(); ?></span>
-			<span>Joined: <?php echo $user->getGmtCreate(); ?></span>
+			<span>用户名: <?php echo $user->getUsername(); ?></span>
+			<span>电子邮件: <?php echo $user->getEmail(); ?></span>
+			<span>加入时间: <?php echo $user->getGmtCreate(); ?></span>
 		</div>
 	</div>
 	

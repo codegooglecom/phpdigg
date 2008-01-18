@@ -56,7 +56,7 @@ pageTracker._trackPageview();
 	<div id="content" class="content">
 		<div id="update" class="update">
 			<div class="hd">
-				My one secret...
+				我的小秘密...
 			</div>
 			<div class="bd">
 				<form id="message-form" action="digg-item.php?create" method="post">
@@ -66,23 +66,23 @@ pageTracker._trackPageview();
 									
 					<div class="form-field">
 						<input id="share-to-fanfou" name="share-to-fanfou" type="checkbox"></input>
-						<label for="share-to-fanfou">Public to <a href="http://www.fanfou.com">fanfou.com</a></label>
+						<label for="share-to-fanfou">同时发布到 <a href="http://www.fanfou.com">fanfou.com</a></label>
 					</div>
 								
 					<div id="username-n-password" style="display: none;" class="bd">
 						<div class="form-field">
-							<label for="fanfou-username">Username:</label>
+							<label for="fanfou-username">用户名:</label>
 							<input id="fanfou-username" name="fanfou-username" type="text" class="text"></input>
 						</div>
 										
 						<div class="form-field">
-							<label for="fanfou-password">Password:</label>
+							<label for="fanfou-password">密码:</label>
 							<input id="fanfou-password" name="fanfou-password" type="password" class="text"></input>
 						</div>
 					</div>
 									
 					<div class="form-field">
-						<input id="commit" type="submit" value="Commit" class="button"></input>
+						<input id="commit" type="submit" value="贴一下" class="button"></input>
 					</div>
 				</form>
 				
@@ -113,7 +113,18 @@ pageTracker._trackPageview();
 						</a>						
 						<span class="op">
 							<p id="p<?php echo $digg_item["id"]; ?>"><?php echo $digg_item["recommend"]; ?></p>
-							<button id="<?php echo $digg_item["id"]; ?>" class="digg">Digg</button>
+							<button id="<?php echo $digg_item["id"]; ?>" class="digg">
+							<?php
+								$id = $digg_item["id"];
+								$digg = $_COOKIE[$id];
+
+								if (!$digg) {
+									echo "顶一下";
+								} else {
+									echo "顶过了";
+								}
+							?>
+							</button>
 						</span>
 						<span class="content">
 							<?php echo $digg_item["content"]; ?>
