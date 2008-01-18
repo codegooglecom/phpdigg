@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Twitter 'n Digg</title>
+<title>Twigg - 分享你的秘密</title>
 <link rel="stylesheet" type="text/css" href="css/g-panel.css" />
 <link rel="stylesheet" type="text/css" href="css/common.css" />
 <link rel="stylesheet" type="text/css" href="css/default.css" />
@@ -81,7 +81,7 @@ pageTracker._trackPageview();
 						</div>
 					</div>
 									
-					<div class="form-field">
+					<div class="form-field center">
 						<input id="commit" type="submit" value="贴一下" class="button"></input>
 					</div>
 				</form>
