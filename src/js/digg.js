@@ -126,7 +126,7 @@ function new_digg_item_callback(json) {
 	var li = $(
 		"<li>" + 
 				"<a href='#' class='avator'>" +
-					"<img src='images/0.gif'></img>" +
+					"<img src='" + record.avator + "'></img>" +
 				"</a>" + 
 				"<a href='#' class='author'>" + record.userName + "</a>" + 
 				"<span class='op'>" +

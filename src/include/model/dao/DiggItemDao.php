@@ -79,6 +79,18 @@ class DiggItemDao extends GenericDao {
 			
 		return $user;
 	}
+	
+	public function getUserAvator($userId) {
+		$sql = "SELECT b.avator_url as avator FROM digg_item a, digg_user b WHERE a.user_id = b.id and b.id = :id";
+		$pdo = $this->dataSource->getPdo();
+		$statement = $pdo->prepare($sql);
+		$statement->execute(array(
+			"id" => $userId
+		));
+		$result = $statement->fetch(PDO::FETCH_ASSOC);
+		
+		return $result["avator"];
+	}
 }
 
 ?>
