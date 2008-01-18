@@ -18,7 +18,7 @@
 			<?php include_once "template/GetLoginUserInfo.php"; ?>
 			<img id="avator-preview-img" src="<?php echo $user->getAvatorUrl(); ?>"></img>
 		</div>
-				
+
 		<form id="avator-form" class="avator-form" enctype="multipart/form-data" action="user.php?avator" method="post">
 			<div class="form-field">
 				<input id="avator" name="avator" type="file"></input>
