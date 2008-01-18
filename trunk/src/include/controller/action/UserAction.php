@@ -112,18 +112,22 @@ class UserAction extends Action {
 			mkdir($uploadDir);
 		}
 		
-		$uploadfile = $uploadDir . basename($_FILES['avator']['name']);
+		$uploadFileInfo = pathinfo($_FILES["avator"]["name"]);
 		
-		move_uploaded_file($_FILES['avator']['tmp_name'], $uploadfile);
+		$uploadFileName = time(). "." . $uploadFileInfo["extension"]; //basename($_FILES['avator']['name']);
+		
+		$uploadFile = $uploadDir . $uploadFileName;
+		
+		move_uploaded_file($_FILES['avator']['tmp_name'], $uploadFile);
 		
 		$userId = $_COOKIE["userId"];
 		
 		$this->manager->update(array(
 			"id" => $userId,
-			"avatorUrl" => $uploadfile
+			"avatorUrl" => $uploadFile
 		));
 		
-		return $uploadfile;		
+		return $uploadFile;		
 	}
 	
 	private function destroyCookie() {
