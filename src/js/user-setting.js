@@ -13,6 +13,29 @@ $(function() {
 		}
 		
 	});
+	
+	$(".g-tab-content").hide();
+	var activeTab = $("#avator-form-panel").show();
+	var activeTabButton = $("#user-setting-panel-nav .g-tab-panel-button.selected");
+	
+	
+	$(".g-tab-panel-button a").click(function() {
+		var pos = this.href.search(/#/);
+		var id = this.href.substr(pos);
+		
+		if (activeTab != null) {
+			activeTab.hide();
+		}
+		
+		if (activeTabButton != null) {
+			activeTabButton.removeClass("selected");
+		}
+		
+		activeTab = $(id).show();
+		activeTabButton = $(this).parent().addClass("selected");
+
+		return false;
+	});
 });
 
 var allowImgExt = ["jpg", "jpeg", "bmp", "gif", "png"];

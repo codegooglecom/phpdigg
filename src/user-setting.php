@@ -63,25 +63,7 @@ pageTracker._trackPageview();
 			<div id="user-setting-panel" class="g-panel">
 				<div class="hd">User Settings</div>
 				<div class="bd">
-					<div id="avator-preview" class="avator-preview">
-						<?php include_once "template/GetLoginUserInfo.php"; ?>
-						<img id="avator-preview-img" src="<?php echo $user->getAvatorUrl(); ?>"></img>
-						<div id="info" class="info">
-							<span>Username: <?php echo $user->getUsername(); ?></span>
-							<span>Email: <?php echo $user->getEmail(); ?></span>
-							<span>Joined: <?php echo $user->getGmtCreate(); ?></span>
-						</div>
-					</div>
-				
-					<form id="avator-form" class="avator-form" enctype="multipart/form-data" action="user.php?avator" method="post">
-						<div class="form-field">
-							<input id="avator" name="avator" type="file"></input>
-						</div>
-						
-						<div class="form-field">
-							<input id="avator-form-submit" type="submit" value="Upload" class="button"></inpu>
-						</div>
-					</form>
+					<?php include_once "template/UserSettingPanel.php"; ?>
 				</div>			
 			</div>
 		</div>
