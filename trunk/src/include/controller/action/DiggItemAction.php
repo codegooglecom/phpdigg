@@ -140,6 +140,16 @@ class DiggItemAction extends Action {
 		return $result;
 	}
 	
+	public function idexDiggItemWithAvator($page = 1, $size = 5, $order = 'recommend') {
+		$sql = "SELECT a.digg_item_id AS id, a.digg_item_content AS content, a.gmt_create AS gmtCreate, a.digg_item_recommend AS recommend, b.username AS userName, b.avator_url AS userAvator FROM digg_item a, digg_user b WHERE a.user_id = b.id";
+		$sql .= (" ORDER BY $order DESC");
+		$start = ($page - 1) * $size;
+		$sql .= (" LIMIT $start, $size");
+		
+		$resultArray = $this->manager->execute($sql);
+		return $resultArray;
+	}
+	
 	public function itemCount() {
 		$result = $this->manager->count();
 		
