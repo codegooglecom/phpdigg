@@ -47,7 +47,7 @@
 	
 	padding: 5px 5px 3px;
 	*padding: 5px 5px 3px;
-	text-align: right;	
+	text-align: left;	
 }
 
 .g-tab-panel-button {
@@ -67,6 +67,10 @@
 
 .g-tab-panel-button {
 	color: #3366CC;	
+}
+
+.g-tab-panel-button a {
+	width: 100%;
 }
 
 .g-tab-panel-button.selected {

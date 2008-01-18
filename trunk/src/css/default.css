@@ -152,7 +152,7 @@
 	background: transparent;
 	width: 54px;
 	
-	margin-top: -4px;
+	margin-top: -2px;
 	padding: 0;
 }
 
@@ -192,18 +192,18 @@
 
 .banner {
 	/*border-style: none;
-	background-color: transparent;
+	background-color: transparent;*/
 	width: 822px;
-	padding: 0;*/
+	padding: 0;
 }
 
 .banner .bd {
-	/*border: solid 1px #C5D7EF;*/	
+	border: solid 1px #C5D7EF;
 }
 
 .banner .bd ul {
 	padding: 5px 3px;
-	text-align: right;
+	text-align: left;
 }
 
 .banner .bd ul li {

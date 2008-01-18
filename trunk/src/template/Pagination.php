@@ -14,13 +14,13 @@ if ($end > $totalPage) {
 
 if ($i > 5) {
 ?>
-	<a href="default.php?page=<?php echo $i - 5; ?>">Previous 5</a>
+	<a href="default.php?page=<?php echo $i - 5; ?>">前5页</a>
 <?php
 }
 
 if ($previousPage > 0) {
 ?>
-	<a href="default.php?page=<?php echo $page - 1; ?>">Previous</a>
+	<a href="default.php?page=<?php echo $page - 1; ?>">前1页</a>
 <?php
 } else {
 ?>
@@ -35,8 +35,8 @@ for (; $i <= $end; $i++) {
 
 if ($i < $totalPage + 1) {
 ?>
-<a href="default.php?page=<?php echo $page + 1; ?>">Next</a>
-<a href="default.php?page=<?php echo $i; ?>">Next 5</a>
+<a href="default.php?page=<?php echo $page + 1; ?>">后1页</a>
+<a href="default.php?page=<?php echo $i; ?>">后5页</a>
 <?php
 } else {
 ?>
