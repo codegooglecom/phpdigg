@@ -96,3 +96,7 @@ input.text, input.password, input.tiny {
 .clear {
 	clear: both;
 }
+
+.center { 
+	text-align: center;
+}
