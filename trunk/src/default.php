@@ -86,7 +86,7 @@ pageTracker._trackPageview();
 					</div>
 				</form>
 				
-				<div id="message-form-tip" class="g-tip">
+				<div id="message-form-tip" class="g-tip large">
 				</div>
 			</div>
 			<div class="ft">

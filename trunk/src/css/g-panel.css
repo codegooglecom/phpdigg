@@ -87,6 +87,10 @@
 .g-tip {
 	display: none;
 	border: solid 1px #C5D7EF;
-	background: #E5ECF9 url(assets/animated_loading.gif) center center no-repeat;
+	background: #E5ECF9 url(assets/animated-loading.gif) center center no-repeat;
 	height: 100px;	
+}
+
+.g-tip.large {
+	background: #E5ECF9 url(assets/animated-loading-large.gif) center center no-repeat;
 }
