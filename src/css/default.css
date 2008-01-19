@@ -128,7 +128,8 @@
 }
 
 .board .content .timeline .bd ul li span.op {
-	background: url(assets/vote.png) left top no-repeat;
+	background: url(assets/vote-blue.png) left top no-repeat;
+	color: #000000;
 	width: 54px;
 	height: 71px;
 	
