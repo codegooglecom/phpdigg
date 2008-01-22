@@ -157,6 +157,44 @@ class DiggItemAction extends Action {
 		
 		return $result;
 	}
+	
+	public function feed() {
+		header('Content-Type: application/xml; charset=UTF-8');
+		
+		$rss = '<?xml version="1.0" encoding="UTF-8"?>';
+		
+		$rss .= '<rss version="2.0">';
+		$rss .= '<channel>';
+      	$rss .= '<title>Twigg - 分享你的秘密</title>';
+      	$rss .= '<link>http://digg.wjl.cn</link>';
+      	$rss .= '<description>秘密分享站点</description>';
+      	$rss .= '<language>zh-cn</language>';
+      	$rss .= '<webMaster>bbbiao@gmail.com</webMaster>';
+      
+      	$resultArray = $this->manager->findAll(array(
+			"orderby" => "gmtCreate",
+		));
+		
+		$rss .= '<pubDate>' . $resultArray[0]->getGmtCreate() . '</pubDate>';
+      	$rss .= '<lastBuildDate>' . $resultArray[0]->getGmtCreate() . '</lastBuildDate>';
+		
+		foreach($resultArray as $diggItem) {
+			$jsonObj = $diggItem->toJSONObject();
+			
+			$rss .= '<item>';
+         	$rss .= '<title>'. $jsonObj["userName"] . ' - ' . $jsonObj["gmtCreate"] . '</title>';
+         	$rss .= '<link>http://digg.wjl.cn/digg.php?id='. $jsonObj["id"]. '</link>';
+         	$rss .= '<description><![CDATA[' . $jsonObj["content"] . ']]></description>';
+         	$rss .= '<pubDate>' . $jsonObj["gmtCreate"] . '</pubDate>';
+         	$rss .= '<guid>http://digg.wjl.cn/digg.php?id=' . $jsonObj["id"] . '</guid>';
+      		$rss .= '</item>';
+		}      	
+      	
+      	$rss .= '</channel>';
+      	$rss .= '</rss>';
+      	
+      	return $rss;
+	}
 }
 
 ?>
