@@ -130,7 +130,7 @@ function new_digg_item_callback(json) {
 				"</a>" + 
 				"<a href='#' class='author'>" + record.userName + "</a>" + 
 				"<span class='op'>" +
-					"<p id='p" + record.id + "'>" + record.recommend + "</p>" +
+					"<span id='p" + record.id + "'>" + record.recommend + "</span>" +
 					"<button id='" + record.id + "' class='btn digg'>Digg</button>" +
 				"</span>" +
 				"<span>" +
