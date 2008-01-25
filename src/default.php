@@ -48,6 +48,10 @@ pageTracker._trackPageview();
 		?>
 		
 		<?php
+			include_once "template/FeedSubscribe.html";
+		?>
+		
+		<?php
 			include_once "template/Links.html";
 		?>
 		
