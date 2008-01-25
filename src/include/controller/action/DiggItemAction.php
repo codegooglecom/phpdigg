@@ -23,6 +23,10 @@ class DiggItemAction extends Action {
 		$userId = $_COOKIE["userId"] ? $_COOKIE["userId"] : "0";
 		$userName = $_COOKIE["userName"] ? $_COOKIE["userName"] : "anonymous";
 		
+		if ($_POST['anonymous'] == 'true') {
+			$userName = 'anonymous';
+		}
+		
 		$diggItem->setUserId($userId);
 		$diggItem->setUserName($userName);
 		
@@ -36,7 +40,11 @@ class DiggItemAction extends Action {
 		
 		$result = $diggItem->toJSONObject();
 		
-		$result["avator"] = $this->manager->getUserAvator($userId);
+		if ($_POST['anonymous'] == 'true') {
+			$result["avator"] = 'images/user_default_medium.gif';
+		} else {
+			$result["avator"] = $this->manager->getUserAvator($userId);	
+		}
 		
 		return $result;
 	}
@@ -143,7 +151,8 @@ class DiggItemAction extends Action {
 	}
 	
 	public function indexDiggItemWithAvator($page = 1, $size = 5, $order = 'recommend') {
-		$sql = "SELECT a.digg_item_id AS id, a.digg_item_content AS content, a.gmt_create AS gmtCreate, a.digg_item_recommend AS recommend, b.username AS userName, b.avator_url AS userAvator FROM digg_item a, digg_user b WHERE a.user_id = b.id";
+//		$sql = "SELECT a.digg_item_id AS id, a.digg_item_content AS content, a.gmt_create AS gmtCreate, a.digg_item_recommend AS recommend, b.username AS userName, b.avator_url AS userAvator FROM digg_item a, digg_user b WHERE a.user_id = b.id";
+		$sql = 'SELECT a.digg_item_id AS id, a.digg_item_content AS content, a.gmt_create AS gmtCreate, a.digg_item_recommend AS recommend, a.user_name AS userName, b.avator_url AS userAvator FROM digg_item a, digg_user b WHERE a.user_name = b.username';
 		$sql .= (" ORDER BY $order DESC");
 		$start = ($page - 1) * $size;
 		$sql .= (" LIMIT $start, $size");

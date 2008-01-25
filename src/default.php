@@ -74,8 +74,11 @@ pageTracker._trackPageview();
 					</div>
 									
 					<div class="form-field">
-						<input id="share-to-fanfou" name="share-to-fanfou" type="checkbox"></input>
 						<label for="share-to-fanfou">同时发布到 <a href="http://www.fanfou.com">fanfou.com</a></label>
+						<input id="share-to-fanfou" name="share-to-fanfou" type="checkbox"></input>
+						
+						<label for="anonymous">匿名发布</label>
+						<input id="anonymous" name="anonymous" type="checkbox"></input>
 					</div>
 								
 					<div id="username-n-password" style="display: none;" class="bd">
