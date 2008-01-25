@@ -76,7 +76,8 @@ class UserAction extends Action {
 		
 		$user->setEmail($email);
 		$user->setGmtCreate(date("Y-m-d H:i:s"));
-
+		$user->setGmtLastLogin(date("Y-m-d H:i:s"));
+		
 		$this->manager->save($user);
 		
 		$result = array ("success" => true, "id" => $user->getId());
