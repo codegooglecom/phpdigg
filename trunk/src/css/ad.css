@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+#logo {
+	width: 174px;
+	height: 105px;
+	float: left;
+}
+
+#banner-ad {
+	width: 468px;
+	height: 85px;
+	padding-top: 20px;
+	float: right;
+}
