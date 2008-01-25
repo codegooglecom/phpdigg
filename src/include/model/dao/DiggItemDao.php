@@ -11,30 +11,30 @@ class DiggItemDao extends GenericDao {
 			
 		$this->mapping = new Mapping("DiggItem", "digg_item", "id",
 		array(
-			"id", 
-			"img", 
-			"url", 
-			"recommend", 
-			"notRecommend", 
-			"name", 
-			"content", 
-			"userId", 
-			"userIp",
-			"userName", 
-			"gmtCreate"
+				"id", 
+				"img", 
+				"url", 
+				"recommend", 
+				"notRecommend", 
+				"name", 
+				"content", 
+				"userId", 
+				"userIp",
+				"userName", 
+				"gmtCreate"
 			),
 			array(
-			"digg_item_id", 
-			"digg_item_img", 
-			"digg_item_url", 
-			"digg_item_recommend", 
-			"digg_item_not_recommend", 
-			"digg_item_name", 
-			"digg_item_content", 
-			"user_id",
-			"user_ip", 
-			"user_name", 
-			"gmt_create"
+				"digg_item_id", 
+				"digg_item_img", 
+				"digg_item_url", 
+				"digg_item_recommend", 
+				"digg_item_not_recommend", 
+				"digg_item_name", 
+				"digg_item_content", 
+				"user_id",
+				"user_ip", 
+				"user_name", 
+				"gmt_create"
 			));
 	}
 
@@ -42,7 +42,7 @@ class DiggItemDao extends GenericDao {
 		$pdo = $this->dataSource->getPdo();
 
 		$tableName = $this->mapping->getTableName();
-		
+
 		$sql = "UPDATE " . $tableName . " SET digg_item_recommend = digg_item_recommend + 1 WHERE digg_item_id =:id;";
 		$statement = $pdo->prepare($sql);
 		$statement->execute(array(
@@ -79,7 +79,7 @@ class DiggItemDao extends GenericDao {
 			
 		return $user;
 	}
-	
+
 	public function getUserAvator($userId) {
 		$sql = "SELECT b.avator_url as avator FROM digg_item a, digg_user b WHERE a.user_id = b.id and b.id = :id";
 		$pdo = $this->dataSource->getPdo();
@@ -88,7 +88,7 @@ class DiggItemDao extends GenericDao {
 			"id" => $userId
 		));
 		$result = $statement->fetch(PDO::FETCH_ASSOC);
-		
+
 		return $result["avator"];
 	}
 }

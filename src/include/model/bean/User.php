@@ -16,6 +16,8 @@ class User {
 	private $email;
 	private $nickname;
 	private $gmtCreate = "0000-00-00 00:00:00";
+	private $gmtLastLogin = "0000-00-00 00:00:00";
+	
 	
 	private $avatorUrl = "images/user_default_medium.gif";
 	
@@ -65,6 +67,14 @@ class User {
 	
 	public function setGmtCreate($gmtCreate) {
 		$this->gmtCreate = $gmtCreate;
+	}
+	
+	public function getGmtLastLogin() {
+		return $this->gmtLastLogin;
+	}
+	
+	public function setGmtLastLogin($gmtLastLogin) {
+		$this->gmtLastLogin = $gmtLastLogin;
 	}
 	
 	public function toJSONObject() {

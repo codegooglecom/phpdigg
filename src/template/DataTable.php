@@ -5,5 +5,5 @@ $itemCount = $action->itemCount();
 
 $order = $tab == "digg" ? "recommend" : "gmtCreate";
 
-$index_digg_item = $action->idexDiggItemWithAvator($page, 10, $order);
+$index_digg_item = $action->indexDiggItemWithAvator($page, 10, $order);
 ?>

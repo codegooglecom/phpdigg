@@ -9,8 +9,26 @@ class UserDao extends GenericDao {
 		parent::__construct($dsn, $username, $password);
 			
 		$this->mapping = new Mapping("User", "digg_user", "id",
-		array("id", "username", "password", "email", "nickname", "avatorUrl", "gmtCreate"),
-		array("id", "username", "password", "email", "nickname", "avator_url", "gmt_create"));
+		array(
+			"id",
+			"username",
+			"password",
+			"email",
+			"nickname",
+			"avatorUrl",
+			"gmtCreate",
+			'gmtLastLogin'
+		),
+		array(
+			"id",
+			"username",
+			"password",
+			"email",
+			"nickname",
+			"avator_url",
+			"gmt_create",
+			'gmt_last_login'
+		));
 	}
 
 	public function findByName($name) {
