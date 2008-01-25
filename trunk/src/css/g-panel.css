@@ -33,6 +33,10 @@
 	/*min-height: 240px;*/
 }
 
+.g-panel .bd a img {
+	border-style: none;	
+}
+
 .g-panel .ft {
 	border: solid 1px #C5D7EF;
 	border-style: none solid solid;
