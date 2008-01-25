@@ -26,7 +26,7 @@
 			</div>
 						
 			<div class="form-field">
-				<input id="avator-form-submit" type="submit" value="上传" class="button"></inpu>
+				<input id="avator-form-submit" type="submit" value="上传" class="button"></input>
 			</div>
 		</form>
 	</div>	
