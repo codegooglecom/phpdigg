@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="css/g-panel.css" />
 <link rel="stylesheet" type="text/css" href="css/common.css" />
 <link rel="stylesheet" type="text/css" href="css/default.css" />
+<link rel="stylesheet" type="text/css" href="css/ad.css" />
 <link rel="stylesheet" type="text/css" href="css/user-setting.css" />
 <script type="text/javascript" src="js/json2.js"></script>
 
