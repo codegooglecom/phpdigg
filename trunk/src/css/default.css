@@ -137,7 +137,7 @@
 	float: right;	
 }
 
-.board .content .timeline .bd ul li span.op p {
+.board .content .timeline .bd ul li span.op span {
 	display: block;
 	font-size: 24px;
 	/*background: url(assets/digg-background.png) left 80% no-repeat;*/

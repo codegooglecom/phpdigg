@@ -29,6 +29,11 @@ class UserAction extends Action {
 			setcookie("userId", $user->getId(), time() + 60 * 60 * 48);
 			setcookie("userName", $user->getUsername(), time() + 60 * 60 * 48);
 			
+			$this->manager->update(array (
+				"id" => $user->getId(),
+				"gmtLastLogin" => date("Y-m-d H:i:s")
+			));
+			
 			return $user;
 		} else {
 			return null;
@@ -139,6 +144,12 @@ class UserAction extends Action {
 		foreach ($cookie as $key => $value) {
 			setcookie($key, NULL, 0);
 		}
+	}
+	
+	public function getRecentLoginUser($size = 10) {
+		$userList = $this->manager->getRecentLoginUser($size);
+		
+		return $userList;
 	}
 }
 ?>
