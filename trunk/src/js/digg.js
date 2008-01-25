@@ -85,6 +85,7 @@ function ajax_login_callback(data) {
 
 function new_digg_item() {	
 	var update = $(".update textarea").val();
+	var anonymous = $("#anonymous").attr("checked") ? true : false;
 	
 	var ffUsername = null;
 	var ffPassword = null;
@@ -109,6 +110,7 @@ function new_digg_item() {
    			data: {
    				name: "",
    				content: update,
+   				anonymous: anonymous,
    				shareToFanfou: shareToFanfou,
    				ffUsername: ffUsername,
    				ffPassword: ffPassword
