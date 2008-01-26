@@ -48,8 +48,7 @@ if (isset($_GET["register"])) {
 	//header("Location: default.php");
 } else if (isset($_GET["profile"])) {
 	$result = $action->updateProfile();
-	
-	//echo json_encode($result->toJSONObject());
+//	echo json_encode($result->toJSONObject());
 	header("Location: user-setting.php");
 }
 ?>
