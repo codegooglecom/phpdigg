@@ -2,6 +2,7 @@
 include_once "include/Prepare.php";
 
 include_once "controller/action/DiggItemAction.php";
+include_once "model/service/AccountBindingManager.php";
 
 $action = new DiggItemAction();
 
@@ -30,7 +31,21 @@ if (isset($_GET["new"])) {
 			
 			$ff = new Fanfou($u, $p);
 			$ff->update($_POST["content"]);
-		}
+		} else {
+			$accountBindingManager = new AccountBindingManager();
+			$userId = $_COOKIE['userId'];
+			$accountBinding = $accountBindingManager->findByUserId($userId, 'ff');
+			if ($accountBinding) {
+				include_once "lib/Snoopy.class.php";
+				include_once "lib/Fanfou.class.php";
+				$u = $accountBinding->getUsername();
+				$p = $accountBinding->getPassword();
+				$p = base64_decode($p);
+			
+				$ff = new Fanfou($u, $p);
+				$ff->update($_POST["content"]);
+			}
+		}		
 		
 		echo json_encode($result);
 	}
