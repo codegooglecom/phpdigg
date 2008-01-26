@@ -152,5 +152,37 @@ class UserAction extends Action {
 		
 		return $userList;
 	}
+	
+	public function changePassword() {
+		$result = array(
+			'success' => false
+		);
+		
+		$userId = $_COOKIE['userId'];
+		
+		if ($userId == null || $userId == '0') {
+			$result['success'] = false;
+			
+			return $result;
+		}
+		
+		$original = $_POST['original-pwd'];
+		$encrypt = md5($original);
+		
+		$new = $_POST['new-pwd'];
+		
+		$user = $this->manager->findById($userId);
+		
+		if ($user != null && $user->getPassword() == $encrypt) {
+			$encrypt = md5($new);
+			
+			$result['success'] = $this->manager->update(array(
+				'id' => $userId,
+				'password' => $encrypt
+			));
+		}
+		
+		return $result;
+	}
 }
 ?>

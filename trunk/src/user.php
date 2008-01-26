@@ -41,5 +41,10 @@ if (isset($_GET["register"])) {
 	$result = $action->updateAvator();
 	
 	header("Location: default.php");
+} else if (isset($_GET["password"])) {
+	$result = $action->changePassword();
+	
+	echo json_encode($result);
+	//header("Location: default.php");
 }
 ?>

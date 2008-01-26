@@ -32,7 +32,7 @@
 	</div>	
 	
 	<div id="basic-info-panel" class="g-tab-content">
-		<form id="basic-info-form" action="">
+		<form id="basic-info-form" action="user.php?password" method="post">
 			<h3>帐户信息</h3>
 			<div class="form-field">
 				<label>用户名</label>
@@ -50,15 +50,15 @@
 			<h3>修改密码</h3>
 			<div class="form-field">
 				<label>旧密码</label>
-				<input type="password" class="text" value="" />
+				<input id="original-pwd" name="original-pwd" type="password" class="text" value="" />
 			</div>
 			<div class="form-field">
 				<label>新密码</label>
-				<input type="password" class="password" value="" />
+				<input id="new-pwd" name="new-pwd" type="password" class="password" value="" />
 			</div>
 			<div class="form-field">
 				<label>确认新密码</label>
-				<input type="password" class="password" value="" />
+				<input id="retype-pwd" name="retype-pwd" type="password" class="password" value="" />
 			</div>
 				
 			<div class="form-field action">
@@ -72,9 +72,9 @@
 			<div class="form-field">
 				<label for="gender">性别</label>
 				<select name="gender" id="gender">
-					<option value="Unknow"></option>
-					<option value="Male" selected="selected">男</option>
-					<option value="Female">女</option>
+					<option value="0"></option>
+					<option value="1">男</option>
+					<option value="2">女</option>
 				</select>
 			</div>
 			<div class="form-field">
