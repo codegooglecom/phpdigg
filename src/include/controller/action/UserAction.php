@@ -83,12 +83,16 @@ class UserAction extends Action {
 		$user->setGmtCreate(date("Y-m-d H:i:s"));
 		$user->setGmtLastLogin(date("Y-m-d H:i:s"));
 
-		$this->manager->save($user);
+		$result = $this->manager->save($user);
 
-		$result = array ("success" => true, "id" => $user->getId());
+		if ($result) {
+			$result = array ("success" => true, "id" => $user->getId());
 
-		setcookie("userId", $user->getId(), time() + 60 * 60 * 48);
-		setcookie("userName", $user->getUsername(), time() + 60 * 60 * 48);
+			setcookie("userId", $user->getId(), time() + 60 * 60 * 48);
+			setcookie("userName", $user->getUsername(), time() + 60 * 60 * 48);
+		} else {
+			$result = NULL;
+		}
 
 		return $result;
 	}

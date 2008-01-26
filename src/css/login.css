@@ -11,6 +11,7 @@ div.form-field input.text, div.form-field input.password {
 }
 
 div.form-field label {
+	display: block;
 }
 
 div.form-field input.text, div.form-field input.password {
