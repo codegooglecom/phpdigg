@@ -23,7 +23,7 @@ pageTracker._trackPageview();
 
 </head>
 <body>
-<?php include_once "template/Banner.html"; ?>
+<?php include_once "template/Banner.php"; ?>
 
 <div id="board" class="box-blue board">
 	<div id="sidebar" class="sidebar">
