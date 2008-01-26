@@ -160,15 +160,15 @@
 	</div>
 	
 	<div id="im-bind-panel" class="g-tab-content">
-		<form id="im-bind-form" action="">				
+		<form id="im-bind-form" action="user.php?bindFF" method="post">				
 			<h3>绑定饭否帐号</h3>
 			<div class="form-field">
 				<label>用户名</label>
-				<input type="text" class="text" value="" />
+				<input name="username" type="text" class="text" value="<?php echo $accountBinding['username']; ?>" />
 			</div>
 			<div class="form-field">
 				<label>密码</label>
-				<input type="password" class="password" value="" />
+				<input name="password" type="password" class="password" value="<?php echo base64_decode($accountBinding['password']); ?>" />
 			</div>				
 			<div class="form-field action">
 				<input id="im-bind-form-submit" type="submit" value="绑定" class="button"></input>
