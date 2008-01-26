@@ -36,6 +36,8 @@ $(function() {
 
 		return false;
 	});
+	
+	$('#basic-info-form-submit').click(change_password);
 });
 
 var allowImgExt = ["jpg", "jpeg", "bmp", "gif", "png"];
@@ -58,5 +60,51 @@ function change_avator_img() {
 		$("#avator-preview-img").attr("src", imgUrl);
 	} else {
 		$("#avator").val(" ");
+	}
+}
+
+function is_blank(str) {
+	return str == null || str.length == 0;
+}
+
+function change_password() {
+	var url = $("#basic-info-form").attr("action") + "&json";
+	var method = $("#basic-info-form").attr("method") || 'POST';
+		
+		
+	var oldPwd = $('#original-pwd').val();
+	var newPwd = $('#new-pwd').val();
+	var retype = $('#retype-pwd').val();
+	
+	if (is_blank(oldPwd) || is_blank(newPwd) || is_blank(retype) ) {
+		alert('Please enter all three field!');
+		return false;
+	}
+	
+	if (newPwd != retype) {
+		alert('Password retype dismatch the new password');
+		$('#retype-pwd').val('');
+		return false;
+	}
+	
+	$.ajax({
+   		type: method,
+   		url: url,
+   		data: {
+   			'original-pwd': oldPwd,
+   			'new-pwd': newPwd
+   		},
+   		success: change_password_callback
+ 	});
+	return false;
+}
+
+function change_password_callback(data) {
+	result = JSON.parse(data);
+	
+	if (result.success) {
+		alert('Success');
+	} else {
+		alert('Failed');
 	}
 }
