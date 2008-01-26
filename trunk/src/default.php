@@ -73,10 +73,12 @@ pageTracker._trackPageview();
 						<textarea id="secret" name="secret" rows="4" cols="40"></textarea>
 					</div>
 									
-					<div class="form-field">
+					<div class="form-field" style="display: none;">
 						<label for="share-to-fanfou">同时发布到 <a href="http://www.fanfou.com">fanfou.com</a></label>
 						<input id="share-to-fanfou" name="share-to-fanfou" type="checkbox"></input>
-						
+					</div>
+					
+					<div class="form-field">
 						<label for="anonymous">匿名发布</label>
 						<input id="anonymous" name="anonymous" type="checkbox"></input>
 					</div>

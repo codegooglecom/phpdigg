@@ -85,7 +85,7 @@ pageTracker._trackPageview();
 							<?php echo $digg_item["userName"]; ?>
 						</a>						
 						<span class="op">
-							<p id="p<?php echo $digg_item["id"]; ?>"><?php echo $digg_item["recommend"]; ?></p>
+							<span id="p<?php echo $digg_item["id"]; ?>"><?php echo $digg_item["recommend"]; ?></span>
 							<button id="<?php echo $digg_item["id"]; ?>" class="digg">Digg</button>
 						</span>
 						<span class="content">

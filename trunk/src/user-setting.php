@@ -1,11 +1,8 @@
-<?php
-	include_once "template/CheckAuthentication.php";
-?>
-
+<?php include_once "template/CheckAuthentication.php"; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Twigg - 分享你的秘密</title>
 <link rel="stylesheet" type="text/css" href="css/g-panel.css" />
 <link rel="stylesheet" type="text/css" href="css/common.css" />
