@@ -1,5 +1,22 @@
 @CHARSET "UTF-8";
 
+div.form-field {
+	width: 290px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.form-field input.text, div.form-field input.password {
+	display: block;	
+}
+
 div.form-field label {
-	min-width: 80px;
+}
+
+div.form-field input.text, div.form-field input.password {
+	font-size: 14px;
+	font-weight: bold;
+	width: 280px;
+	height: 18px;
+	line-height: 18px;
 }

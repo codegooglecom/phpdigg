@@ -2,8 +2,8 @@
 
 * {
 	font-family: Tahoma, Arial, Sans-serif;
-	margin: 0;
-	padding: 0;
+	margin: 0pt;
+	padding: 0pt;
 }
 
 html body {
@@ -39,8 +39,13 @@ button.red {
 	color: #FFFFFF;
 }
 
+form {
+	color: #000;
+}
+
 div.form-field {
-	margin: 0 0 5px;
+	line-height: 23px;
+	margin: 0pt 0pt 5px;
 }
 
 div.form-field label {
@@ -54,15 +59,29 @@ div.form-field label a {
 	*margin-left: 0;	
 }
 
-input.text, input.password, input.tiny {
-	border: solid 1px #C5D7EF;
+input.text, input.password, input.tiny, textarea, select {
+	/*border: solid 1px #C5D7EF;*/
+	border-color: #7C7C7C #C3C3C3 #DDDDDD;
+	border-style: solid;
+	border-width: 1px;
 	font-size: 12px;
-
-	width: 150px;
-	height: 15px;
-	line-height: 15px;;
 	
 	padding: 3px 4px;
+}
+
+input.text, input.password, input.tiny {
+	width: 150px;
+	height: 15px;
+	line-height: 15px;
+}
+
+textarea {
+	overflow: auto;
+}
+
+input.readonly {
+	background: #EEEEEE none repeat scroll 0%;
+	border: 1px solid #CCCCCC;
 }
 
 .box-blue {
