@@ -89,7 +89,7 @@
 				年
 				<select name="birth-month" id="birth-month">
 					<?php
-						for($idx = 0; $idx < 12; $idx++) {
+						for($idx = 1; $idx < 12; $idx++) {
 							if ($idx == $userProfile['birthMonth']) {
 								echo '<option value="' . $idx . '" selected="selected">' . $idx . '</option>';
 							} else {
@@ -101,7 +101,7 @@
 				月
 				<select name="birth-day" id="birth-day">
 					<?php
-						for($idx = 0; $idx < 31; $idx++) {
+						for($idx = 1; $idx < 31; $idx++) {
 							if ($idx == $userProfile['birthDay']) {
 								echo '<option value="' . $idx . '" selected="selected">' . $idx . '</option>';
 							} else {
