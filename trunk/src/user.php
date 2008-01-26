@@ -10,7 +10,7 @@ if (isset($_GET["register"])) {
 	$result = $action->save();
 	
 	if ($result != null) {
-		header("Location: default.php");
+		header("Location: user-setting.php");
 	} else {
 		echo "Error...";
 	}

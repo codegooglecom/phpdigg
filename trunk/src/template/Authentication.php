@@ -48,11 +48,13 @@ $user = $action->getLoginUser();
 				<label for="password">密码:</label>
 				<input id="password" name="password" type="password" class="password"></input>
 			</div>
-					
+			
+			<!--	
 			<div class="form-field">
 				<input id="autologin" type="checkbox" value="on"></input>
 				<label for="autologin">记住我</label>
 			</div>
+			-->
 					
 			<div class="form-field">
 				<input id="login-form-submit" type="submit" value="登录" class="button"></input>
