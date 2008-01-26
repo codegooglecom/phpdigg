@@ -36,7 +36,15 @@
 		<ul>
 			<li><a href="/">首页</a></li>
 			<li><a href="user-setting.php">设置</a></li>
-			<li><a href="login.php">登录</a></li>
+			<?php
+				$username = $_COOKIE["userName"];
+
+				if ($username != null) {
+			?>
+				<li><a href="user.php?logout">注销</a></li>
+			<?php } else { ?>
+				<li><a href="login.php">登录</a></li>
+			<?php } ?>
 		</ul>
 	</div>
 </div>
