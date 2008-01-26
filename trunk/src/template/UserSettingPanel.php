@@ -68,165 +68,90 @@
 	</div>
 	
 	<div id="detail-info-panel" class="g-tab-content">
-		<form id="detail-info-form" action="">
+		<form id="detail-info-form" action="user.php?profile" method="post">
 			<div class="form-field">
 				<label for="gender">性别</label>
 				<select name="gender" id="gender">
-					<option value="0"></option>
-					<option value="1">男</option>
-					<option value="2">女</option>
+					<?php
+						for($idx = 0; $idx < 3; $idx++) {
+							if ($idx == $userProfile['gender']) {
+								echo '<option value="' . $idx . '" selected="selected">' . UserProfile::$GENDER[$idx] . '</option>';
+							} else {
+								echo '<option value="' . $idx . '">' . UserProfile::$GENDER[$idx] . '</option>';
+							}
+						}
+					?>
 				</select>
 			</div>
 			<div class="form-field">
 				<label for="birth-year">生日</label>
-				<input name="birth-year" type="text" class="text tiny" value="" maxlength="4" />
+				<input name="birth-year" type="text" class="text tiny" value="<?php echo $userProfile['birthYear']; ?>" maxlength="4" />
 				年
 				<select name="birth-month" id="birth-month">
-					<option value=""></option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-					<option value="7">7</option>
-					<option value="8">8</option>
-					<option value="9">9</option>
-					<option value="10">10</option>
-					<option value="11">11</option>
-					<option value="12">12</option>
+					<?php
+						for($idx = 0; $idx < 12; $idx++) {
+							if ($idx == $userProfile['birthMonth']) {
+								echo '<option value="' . $idx . '" selected="selected">' . $idx . '</option>';
+							} else {
+								echo '<option value="' . $idx . '">' . $idx . '</option>';
+							}
+						}
+					?>
 				</select>
 				月
 				<select name="birth-day" id="birth-day">
-					<option value=""></option>
-					<option value="1">1</option>
-					<option value="2">2</option>
-					<option value="3">3</option>
-					<option value="4">4</option>
-					<option value="5">5</option>
-					<option value="6">6</option>
-					<option value="7">7</option>
-					<option value="8">8</option>
-					<option value="9">9</option>
-					<option value="10">10</option>
-					<option value="11">11</option>
-					<option value="12">12</option>
-					<option value="13">13</option>
-					<option value="14">14</option>
-					<option value="15">15</option>
-					<option value="16">16</option>
-					<option value="17">17</option>
-					<option value="18">18</option>
-					<option value="19">19</option>
-					<option value="20">20</option>
-					<option value="21">21</option>
-					<option value="22">22</option>
-					<option value="23">23</option>
-					<option value="24">24</option>
-					<option value="25">25</option>
-					<option value="26">26</option>
-					<option value="27">27</option>
-					<option value="28">28</option>
-					<option value="29">29</option>
-					<option value="30">30</option>
-					<option value="31">31</option>
+					<?php
+						for($idx = 0; $idx < 31; $idx++) {
+							if ($idx == $userProfile['birthDay']) {
+								echo '<option value="' . $idx . '" selected="selected">' . $idx . '</option>';
+							} else {
+								echo '<option value="' . $idx . '">' . $idx . '</option>';
+							}
+						}
+					?>
 				</select>
 				日
 			</div>
 			<div class="form-field">
 				<label for="province">所在地</label>
 				<select name="province" id="province">
-					<option value="0"></option>
-					<option value="1">北京</option>
-					<option value="2">上海</option>
-					<option value="3">天津</option>
-					<option value="4">重庆</option>
-					<option value="5">河北</option>
-					<option value="6">山西</option>
-					<option value="7">内蒙古</option>
-					<option value="8">辽宁</option>
-					<option value="9">吉林</option>
-					<option value="10">江苏</option>
-					<option value="11">浙江</option>
-					<option value="12">安徽</option>
-					<option value="13">福建</option>
-					<option value="14">江西</option>
-					<option value="15">山东</option>
-					<option value="16">河南</option>
-					<option value="17">湖北</option>
-					<option value="18">湖南</option>
-					<option value="19">海南</option>
-					<option value="20">广东</option>
-					<option value="21">广西</option>
-					<option value="22">四川</option>
-					<option value="23">贵州</option>
-					<option value="24">云南</option>
-					<option value="25">西藏</option>
-					<option value="26">陕西</option>
-					<option value="27">甘肃</option>
-					<option value="28">青海</option>
-					<option value="29">宁夏</option>
-					<option value="30">新疆</option>
-					<option value="31">黑龙江</option>
-					<option value="32">香港</option>
-					<option value="33">澳门</option>
-					<option value="34">台湾</option>
-					<option value="35">海外</option>
+					<?php
+						for($idx = 0; $idx < 35; $idx++) {
+							if ($idx == $userProfile['province']) {
+								echo '<option value="' . $idx . '" selected="selected">' . UserProfile::$PROVINCE[$idx] . '</option>';
+							} else {
+								echo '<option value="' . $idx . '">' . UserProfile::$PROVINCE[$idx] . '</option>';
+							}
+						}
+					?>
 				</select>
 				<!-- <select name="city" id="city"> -->
-				<input type="text" value="" name="city" class="text tiny"></input>
+				<input type="text" value="<?php echo $userProfile['city']; ?>" name="city" class="text tiny"></input>
 			</div>
 	
 			<div class="form-field">
 				<label for="homeprovince">家乡</label>
 				<select name="home-province" id="home-province">
-					<option value="0"></option>
-					<option value="1">北京</option>
-					<option value="2">上海</option>
-					<option value="3">天津</option>
-					<option value="4">重庆</option>
-					<option value="5">河北</option>
-					<option value="6">山西</option>
-					<option value="7">内蒙古</option>
-					<option value="8">辽宁</option>
-					<option value="9">吉林</option>
-					<option value="10">江苏</option>
-					<option value="11">浙江</option>
-					<option value="12">安徽</option>
-					<option value="13">福建</option>
-					<option value="14">江西</option>
-					<option value="15">山东</option>
-					<option value="16">河南</option>
-					<option value="17">湖北</option>
-					<option value="18">湖南</option>
-					<option value="19">海南</option>
-					<option value="20">广东</option>
-					<option value="21">广西</option>
-					<option value="22">四川</option>
-					<option value="23">贵州</option>
-					<option value="24">云南</option>
-					<option value="25">西藏</option>
-					<option value="26">陕西</option>
-					<option value="27">甘肃</option>
-					<option value="28">青海</option>
-					<option value="29">宁夏</option>
-					<option value="30">新疆</option>
-					<option value="31">黑龙江</option>
-					<option value="32">香港</option>
-					<option value="33">澳门</option>
-					<option value="34">台湾</option>
-					<option value="35">海外</option>
+					<?php
+						for($idx = 0; $idx < 35; $idx++) {
+							if ($idx == $userProfile['homeProvince']) {
+								echo '<option value="' . $idx . '" selected="selected">' . UserProfile::$PROVINCE[$idx] . '</option>';
+							} else {
+								echo '<option value="' . $idx . '">' . UserProfile::$PROVINCE[$idx] . '</option>';
+							}
+						}
+					?>
 				</select>
 				<!-- <select name="home-city" id="home-city"> -->
-				<input type="text" value="" name="home-city" class="text tiny"></input>
+				<input type="text" value="<?php echo $userProfile['homeCity']; ?>" name="home-city" class="text tiny"></input>
 			</div>
 			<div class="form-field">
-				<label class="label_input" for="pro_bas_website">个人网址</label>
-				<input name="website" type="text" class="text large" id="pro_bas_website" value="http://bbiao.spaces.live.com" />
+				<label for="homepage">个人网址</label>
+				<input name="homepage" type="text" class="text large" id="homepage" value="<?php echo $userProfile['homepage']; ?>" />
 			</div>
 			<div class="form-field">
-				<label class="label_input" for="pro_bas_detail">自述</label>
-				<textarea name="detail" id="pro_bas_detail" rows="6" cols="50"></textarea>
+				<label for="comment">自述</label>
+				<textarea name="comment" id="comment" rows="6" cols="50"><?php echo $userProfile['comment']; ?></textarea>
 			</div>
 			<div class="form-field action">
 				<input id="detail-info-form-submit" type="submit" value="保存" class="button"></input>

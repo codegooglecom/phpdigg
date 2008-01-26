@@ -2,7 +2,9 @@
 
 include_once "model/bean/User.php";
 include_once "model/dao/UserDao.php";
+include_once "model/dao/UserProfileDao.php";
 include_once "model/service/UserManager.php";
+include_once "model/service/UserProfileManager.php";
 
 include_once "controller/action/Action.php";
 
@@ -10,6 +12,7 @@ class UserAction extends Action {
 
 	public function __construct() {
 		$this->manager = new UserManager();
+		$this->profileManager = new UserProfileManager();
 	}
 
 	public function execute() {
@@ -183,6 +186,54 @@ class UserAction extends Action {
 		}
 		
 		return $result;
+	}
+
+	public function updateProfile() {
+		$userId = $_COOKIE['userId'];
+		
+		$userProfile = $this->profileManager->findByUserId($userId);
+		
+		if ($userProfile == NULL) {
+			$userProfile = new UserProfile();
+			$userProfile->setUserId($userId);
+		}
+		
+		$userProfile->setGender($_POST['gender']);
+		$userProfile->setBirthYear($_POST['birth-year']);
+		$userProfile->setBirthMonth($_POST['birth-month']);
+		$userProfile->setBirthDay($_POST['birth-day']);
+		
+		$userProfile->setProvince($_POST['province']);
+		$userProfile->setCity($_POST['city']);
+		
+		$userProfile->setHomeProvince($_POST['home-province']);
+		$userProfile->setHomeCity($_POST['home-city']);
+		
+		$userProfile->setHomepage($_POST['homepage']);
+		$userProfile->setComment($_POST['comment']);
+		
+		if ($userProfile->getId() == null) {
+			$this->profileManager->save($userProfile);
+		} else {
+			// SHOULD UPDATE THE GenericDao::update, HERE IS A TRICK
+			$this->profileManager->update($userProfile->toJSONObject());
+		}
+		
+		return $userProfile;
+		
+	}
+	
+	public function getUserProfile() {
+		$userId = $_COOKIE['userId'];
+		
+		$userProfile = $this->profileManager->findByUserId($userId);
+		
+		if ($userProfile == NULL) {
+			$userProfile = new UserProfile();
+			$userProfile->setUserId($userId);
+		}
+		
+		return $userProfile;
 	}
 }
 ?>
