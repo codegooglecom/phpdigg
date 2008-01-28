@@ -1,0 +1,74 @@
+@CHARSET "UTF-8";
+
+* {
+	font-family: Tahoma, Arial, Sans-serif;
+	font-size: 9pt;
+	margin: 0pt;
+	padding: 0pt;
+}
+
+ul, ol {
+	list-style-image: none;
+	list-style-position: outside;
+	list-style-type: none;
+}
+
+a {
+	color: #3366CC;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a img {
+	border: solid 1px white;
+}
+
+a:hover img {
+	border: solid 1px yellow;	
+} 
+
+input, input.text, input.password, input.tiny, textarea, select {
+	border-color: #7C7C7C #C3C3C3 #DDDDDD;
+	border-style: solid;
+	border-width: 1px;
+	font-size: 12px;
+	
+	padding: 3px 4px;
+}
+
+button, input.button {
+	border: none;
+	background: url(assets/digg-button-thin.png) left top no-repeat;
+	width: 64px;
+	height: 24px;	
+}
+
+button.red {
+	background: url(assets/btn-background-red.png) left top no-repeat;
+	color: #FFFFFF;
+}
+
+form {
+	color: #000;
+}
+
+div.form-field {
+	line-height: 23px;
+	margin: 0pt 0pt 5px;
+}
+
+div.form-field.action {
+	text-align: center;
+}
+
+div.form-field label {
+	display: block;
+}
+
+div.form-field span.tip, div.form-field span.hint {
+	color: #666;
+	display: block;
+}

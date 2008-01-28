@@ -1,0 +1,62 @@
+@CHARSET "UTF-8";
+
+html body {
+	background-color: #FFFFFF;	
+}
+
+.body {
+	width: 856px;	
+	padding: 10px 10px 0pt;
+	
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+.banner {
+
+}
+
+.banner ul {
+	border: solid 1px #C5D7EF;
+	padding: 5px 10px;
+}
+
+.banner ul li {
+	display: inline;
+	vertical-align: middle;
+}
+
+.banner ul li a:hover {
+	background-color: #3366CC;
+	color: #FFF;
+}
+
+.content {	
+	border: solid 1px #C5D7EF;
+	background-color: #E5ECF9;
+	
+	width: 834px;
+	
+	margin: 10px 0pt 0pt;
+	padding: 10px;
+}
+
+.content .sidebar {
+	border: solid 1px #C5D7EF;
+	background-color: #FFF;
+	
+	width: 200px;
+	min-height: 200px;
+
+	padding: 5px;
+	float: right;
+}
+
+.footer {
+	line-height: 23px;
+	text-align: center;
+}
+
+.clear {
+	clear: both;
+}

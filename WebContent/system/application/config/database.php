@@ -34,9 +34,9 @@
 $active_group = "default";
 
 $db['default']['hostname'] = "localhost";
-$db['default']['username'] = "";
-$db['default']['password'] = "";
-$db['default']['database'] = "";
+$db['default']['username'] = "digg";
+$db['default']['password'] = "hello1234";
+$db['default']['database'] = "digg_ci";
 $db['default']['dbdriver'] = "mysql";
 $db['default']['dbprefix'] = "";
 $db['default']['active_r'] = TRUE;
