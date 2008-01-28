@@ -1,0 +1,87 @@
+@CHARSET "UTF-8"; 
+
+.content .board .update, .content .board .timeline {	
+	border: solid 1px #C5D7EF;
+	background-color: #FFF;
+	width: 600px;
+	padding: 5px;
+}
+
+.content .board .timeline {
+	margin-top: 10px;
+}
+
+.update textarea {
+	width: 590px;
+	height: 100px;
+	overflow: hidden;
+}
+
+.timeline ul li {
+	border-bottom: solid 1px #C7C7C7;	
+	
+	min-height: 80px;
+	height: 80px; 
+	
+	margin: 3px 0;
+	
+	padding: 5px 54px 5px 60px;
+	overflow: hidden;	
+}
+
+.timeline ul li a.avator, .timeline ul li a.author {
+	float: left;
+	overflow: hidden;
+}
+
+.timeline ul li a img {
+	border: solid 1px #C7C7C7;
+	width: 48px;
+	height: 48px;
+	padding: 1px;
+}
+
+.timeline ul li a:hover img {
+	border: solid 1px #FF7031;
+}
+
+.timeline ul li a.avator {
+	margin-left: -60px;
+}
+
+.timeline ul li a.author {
+	margin-right: 3px;
+}
+
+.timeline ul li span {
+	margin-left: 3px;	
+}
+
+.timeline ul li span.op {
+	background: url(assets/vote-blue.png) left top no-repeat;
+	color: #000;
+	width: 54px;
+	height: 71px;
+	
+	margin-right: -54px;
+	float: right;	
+}
+
+.timeline ul li span.op span {
+	display: block;
+	font-size: 24px;
+	/*background: url(assets/digg-background.png) left 80% no-repeat;*/
+	width: 54px;
+	height: 48px;
+	line-height: 48px;
+	text-align: center;
+}
+
+.timeline ul li span.op button {
+	display: block;
+	border-style: none;
+	background: transparent;
+	width: 54px;
+	height: 23px;
+	line-height: 23px;
+}
