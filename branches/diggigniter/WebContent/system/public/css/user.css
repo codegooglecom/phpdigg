@@ -1,0 +1,23 @@
+@CHARSET "UTF-8";
+
+.content .board {	
+	border: solid 1px #C5D7EF;
+	background-color: #FFF;
+	width: 600px;
+	padding: 5px;
+}
+
+.content .g-panel form {
+	width: 280px;
+	
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.content .board .form-field input.text, .content .board .form-field input.password {
+	font-size: 14px;
+	font-weight: bold;
+	height: 18px;
+	line-height: 18px;
+	width: 280px;
+}
