@@ -1,4 +1,3 @@
-<?php include_once "template/CheckAuthentication.php"; ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Strict//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
@@ -58,11 +57,12 @@ pageTracker._trackPageview();
 	
 	<div id="content" class="content">
 		<div class="wrapper"><div id="user-setting-panel" class="g-panel">
-			<div class="hd">设置选项</div>
+			<div class="hd">出错啦</div>
 			<div class="bd">
-				<?php include_once "template/UserSettingPanel.php"; ?>
+				<?php echo $flash['error']; ?>
 			</div>			
 		</div></div>
+	
 	</div>
 	
 	<div class="clear"></div>
