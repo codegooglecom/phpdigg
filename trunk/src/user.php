@@ -9,10 +9,16 @@ $action = new UserAction();
 if (isset($_GET["register"])) {
 	$result = $action->save();
 	
+	print_r($result);
+	
 	if ($result != null) {
-		header("Location: user-setting.php");
+//		header("Location: user-setting.php");
 	} else {
-		echo "Error...";
+//		echo "Error...";
+		$flash = array();
+		$flash['error'] = '注册用户时产生错误，请重新注册。<a href="login.php">注册</a>';
+		include 'error.php';
+		
 	}
 //	echo json_encode($result);
 } else if (isset($_GET["login"])) {

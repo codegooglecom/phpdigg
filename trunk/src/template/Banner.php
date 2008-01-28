@@ -44,6 +44,7 @@
 				<li><a href="user.php?logout">注销</a></li>
 			<?php } else { ?>
 				<li><a href="login.php">登录</a></li>
+				<li><a href="login.php">注册</a></li>
 			<?php } ?>
 		</ul>
 	</div>
