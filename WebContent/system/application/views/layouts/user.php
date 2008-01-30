@@ -9,9 +9,7 @@
 <div class="body">
 	<?php $this->load->view('templates/banner'); ?>
 	
-	<div class="content">
-		<?php $this->load->view('templates/sidebar'); ?>
-		
+	<div class="content">		
 		<div class="board">
 			<?php $this->load->view($essential); ?>
 		</div>

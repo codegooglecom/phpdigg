@@ -72,3 +72,16 @@ div.form-field span.tip, div.form-field span.hint {
 	color: #666;
 	display: block;
 }
+
+div.form-field input.readonly {
+	background: #EEEEEE none repeat scroll 0%;
+	border: 1px solid #CCCCCC;
+}
+
+input.tiny {
+	width: auto;
+}
+
+div.form-field input.large {
+	width: 280px;
+}

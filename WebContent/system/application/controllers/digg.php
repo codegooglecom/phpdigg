@@ -6,6 +6,7 @@ class Digg extends Controller {
 		$this->load->helper('url');
 		$this->load->helper('form');
 		$this->load->helper('tag');
+		$this->load->helper('cookie');
 //		$this->load->scaffolding('digg_item');
 		$this->load->model('diggItem', 'item');		
 	}
@@ -33,7 +34,7 @@ class Digg extends Controller {
 	
 	public function create() {
 		$result = $this->item->insert();
-		
+
 		redirect('digg');
 	}
 	
