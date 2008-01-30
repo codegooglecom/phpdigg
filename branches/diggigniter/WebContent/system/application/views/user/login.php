@@ -1,7 +1,7 @@
 <div id="login" class="g-panel">
 <div class="hd">用户登录</div>
 <div class="bd">
-<?php echo form_open('user/login'); ?>
+<?php echo form_open('user/auth'); ?>
 	<div class="form-field">
 		<label for="username">用户名</label>
 		<input id="username" name="username" type="text" class="text"></input>

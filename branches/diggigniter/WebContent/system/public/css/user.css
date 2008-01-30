@@ -3,12 +3,11 @@
 .content .board {	
 	border: solid 1px #C5D7EF;
 	background-color: #FFF;
-	width: 600px;
 	padding: 5px;
 }
 
 .content .g-panel form {
-	width: 280px;
+	width: 400px;
 	
 	margin-left: auto;
 	margin-right: auto;
@@ -19,5 +18,8 @@
 	font-weight: bold;
 	height: 18px;
 	line-height: 18px;
+}
+
+.content .board .form-field input.large {
 	width: 280px;
 }
