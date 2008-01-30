@@ -56,8 +56,8 @@ if (isset($_GET["register"])) {
 	$result = $action->updateProfile();
 //	echo json_encode($result->toJSONObject());
 	header("Location: user-setting.php");
-} else if (isset($_GET["bindFF"])) {
-	$result = $action->bindAccount("ff");
+} else if (isset($_GET["bind"])) {
+	$result = $action->bindAccount();
 //	echo json_encode($result->toJSONObject());
 	header("Location: user-setting.php");
 }

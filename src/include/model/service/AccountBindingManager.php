@@ -9,7 +9,7 @@ class AccountBindingManager extends BaseManager {
 		$this->dao = new AccountBindingDao(Config::getDateSourceName(), Config::$db_user, Config::$db_password);
 	}
 	
-	public function findByUserId($userId, $type = 'ff')  {
+	public function findByUserId($userId, $type = NULL)  {
 		return $this->dao ? $this->dao->findByUserId($userId, $type) : NULL;
 	}
 }
