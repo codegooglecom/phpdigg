@@ -44,50 +44,6 @@
 	background-color: #FFFFFF;
 }
 
-.g-tab-panel-nav {
-	border-style: none none solid;
-	border-width: 3px;
-	border-color: #7AA5D6;
-	
-	padding: 5px 5px 3px;
-	*padding: 5px 5px 3px;
-	text-align: right;	
-}
-
-.g-tab-panel-button {
-	border-style: solid solid none;
-	border-width: 1px;
-	border-color: #C5D7EF;
-	
-	margin-left: 3px;
-	padding: 3px;
-	
-	/*cursor: pointer;*/
-	
-	/*display: -moz-inline-stack;*/
-	display: inline; /* IE */
-	vertical-align: bottom	
-}
-
-.g-tab-panel-button {
-	color: #3366CC;	
-}
-
-.g-tab-panel-button a {
-	width: 100%;
-}
-
-.g-tab-panel-button.selected {
-	border-color: #7AA5D6;
-	background-color: #7AA5D6;
-	
-	padding-top: 5px;
-}
-
-.g-tab-panel-button.selected a {
-	color: #FFFFFF;
-}
-
 .g-tip {
 	display: none;
 	border: solid 1px #C5D7EF;

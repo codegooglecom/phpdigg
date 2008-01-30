@@ -59,7 +59,7 @@ function change_avator_img() {
 	if(checkImg(imgExt)) {
 		$("#avator-preview-img").attr("src", imgUrl);
 	} else {
-		$("#avator").val(" ");
+		//$("#avator").val("");
 	}
 }
 
@@ -87,16 +87,18 @@ function change_password() {
 		return false;
 	}
 	
-	$.ajax({
-   		type: method,
-   		url: url,
-   		data: {
-   			'original-pwd': oldPwd,
-   			'new-pwd': newPwd
-   		},
-   		success: change_password_callback
- 	});
-	return false;
+//	$.ajax({
+//   		type: method,
+//   		url: url,
+//   		data: {
+//   			'original-pwd': oldPwd,
+//   			'new-pwd': newPwd
+//   		},
+//   		success: change_password_callback
+// 	});
+//	return false;
+
+	return true;
 }
 
 function change_password_callback(data) {

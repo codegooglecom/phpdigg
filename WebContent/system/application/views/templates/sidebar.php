@@ -12,5 +12,15 @@
 		</div>
 	</div>
 
-	<?php $this->load->view('user/login'); ?>
+	<?php
+		$userId = get_cookie('userId');
+		
+		if ($userId) {
+			$this->load->view('user/show');
+		} else {
+			$this->load->view('user/login');
+		}
+		
+		$this->load->view('templates/recent');
+	?>
 </div>

@@ -114,12 +114,34 @@ class UserProfile extends Model {
 	}
 	
 	public function getAccountBinding($id) {
-		return array(
+		$this->db->where('user_id', $id);
+		$query = $this->db->get('digg_account_binding');
+		
+		$result =  array(
+			'tt' => array(
+				'id' => NULL,
+				'username' => '',
+				'password' => ''
+			),
 			'ff' => array(
-				'username' => 'test',
+				'id' => NULL,
+				'username' => '',
+				'password' => ''
+			),
+			'jw' => array(
+				'id' => NULL,
+				'username' => '',
 				'password' => ''
 			)
 		);
+		
+		$records = $query->result_array();
+		
+		foreach ($records as $row) {
+			$result[$row['type']] = $row;
+		}
+		
+		return $result;
 	}
 	
 	public function insert() {
@@ -144,7 +166,6 @@ class UserProfile extends Model {
 	
 	public function auth($username, $password) {
 		$password = md5($password);
-		
 		$this->db->select('id')->from('digg_user')->where('username', $username)->where('password', $password);
 		$query = $this->db->get();
 		$row = $query->row_array();
@@ -156,12 +177,70 @@ class UserProfile extends Model {
 		}
 	}
 	
+	public function update($id, $data, $table = 'digg_user') {		
+		$result = $this->db->where('id', $id)->update($table, $data);
+		
+		return $result;
+	}
+	
+	public function updateProfile($id, $data) {
+		$result = $this->db->where('user_id', $id);
+		$query = $this->db->get('digg_user_profile');
+		$row = $query->row_array();
+		
+		$result = NULL;
+		if ($row) {
+			$result = $this->db->where('user_id', $id)->update('digg_user_profile', $data);
+		} else {
+			$result = $this->db->insert('digg_user_profile', $data);
+		}
+		
+		return $result;
+	}
+	
+	public function bind($id, $data) {
+		$result = $this->db->where('user_id', $id)->where('type', $data['type']);
+		$query = $this->db->get('digg_account_binding');
+		$row = $query->row_array();
+		
+		$result = NULL;
+		if ($row) {
+			$result = $this->db->where('user_id', $id)->where('type', $data['type'])->update('digg_account_binding', $data);
+		} else {
+			$result = $this->db->insert('digg_account_binding', $data);
+		}
+		
+		return $result;
+	}
+	
+	public function findByName($username) {
+		$this->db->where('username', $username);
+		
+		$query = $this->db->get('digg_user');
+		
+		return $query->row_array();
+	}
+	
 	public function updateGmtLastLogin($id) {
 		$gmt = date('Y-m-d H:i:s');
 		$data = array(
 			'gmt_last_login' => $gmt
 		);
 		$this->db->where('id', $id)->update('digg_user', $data);
+	}
+	
+	public function getRecentLoginUser($size = 10) {
+		$this->db
+			->select('id, gmt_last_login, avator_url, username')
+			->from('digg_user')
+			->where('id > ', 0)
+			->orderby('gmt_last_login', 'DESC')
+			->orderby('id', 'ASC')
+			->limit($size);	
+
+		$query = $this->db->get();
+		
+		return $query->result_array();
 	}
 }
 

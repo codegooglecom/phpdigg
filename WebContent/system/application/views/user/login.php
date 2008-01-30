@@ -4,14 +4,14 @@
 <?php echo form_open('user/auth'); ?>
 	<div class="form-field">
 		<label for="username">用户名</label>
-		<input id="username" name="username" type="text" class="text"></input>
+		<input id="username" name="username" type="text" class="text large"></input>
 		<span class="hint">注册小秘密时你输入的用户名</span>
 	</div>
 					
 					
 	<div class="form-field">
 		<label for="password">密码</label>
-		<input id="password" name="password" type="password" class="password"></input>
+		<input id="password" name="password" type="password" class="password large"></input>
 		<span class="hint">你的密码</span>
 	</div>
 			
