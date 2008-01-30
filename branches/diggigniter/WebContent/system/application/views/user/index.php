@@ -1,5 +1,9 @@
 <div id="board" class="board">
-	<div id="setting" class="setting">
-		hello
+	<div class="message">
+		<?php
+			if (isset($message)) {
+				echo $message;
+			}
+		?>
 	</div>
 </div>

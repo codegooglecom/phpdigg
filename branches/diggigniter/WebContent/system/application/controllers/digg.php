@@ -8,13 +8,21 @@ class Digg extends Controller {
 		$this->load->helper('tag');
 		$this->load->helper('cookie');
 //		$this->load->scaffolding('digg_item');
-		$this->load->model('diggItem', 'item');		
+		$this->load->model('diggItem', 'item');	
+		$this->load->model('userProfile', 'user');	
 	}
 	
 	public function index() {
 		$data['title'] = '分享你的秘密';		
 		$data['query'] = $this->item->select();
 		
+		$id = get_cookie('userId');
+		if ($id) {
+			$data['user'] = $this->user->getUser($id);
+		}
+		
+		$recentLoginUser = $this->user->getRecentLoginUser();
+		$data['recent'] = $recentLoginUser;
 //		$this->load->view('digg/index', $data);
 		$this->load->layout('layouts/digg', 'digg/index', $data);
 	}

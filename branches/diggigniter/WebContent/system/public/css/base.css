@@ -60,3 +60,8 @@ html body {
 .clear {
 	clear: both;
 }
+
+span.avator img {
+	max-width: 48px;
+	max-height: 48px;
+}

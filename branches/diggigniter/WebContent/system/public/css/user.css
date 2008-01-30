@@ -23,3 +23,9 @@
 .content .board .form-field input.large {
 	width: 280px;
 }
+
+.profile span {
+	display: block;
+	line-height: 23px;
+	/*font-size: 15px;*/
+}

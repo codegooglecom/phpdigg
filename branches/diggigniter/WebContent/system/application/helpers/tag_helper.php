@@ -38,7 +38,8 @@ function js() {
 	}
 }
 
-function img() {
+/*
+function img($img, $attributes = array()) {
 	$len = func_num_args();
 	if ($len == 0) {
 		return '';
@@ -55,6 +56,24 @@ function img() {
 
 		return $link;
 	}
+}
+*/
+
+function img($uri, $attributes = array()) {
+	$CI = &get_instance();
+	$uri = $CI->config->item('base_url') . 'system/public/' . $uri;
+	$uri = '<img src="' . $uri . '"';
+	
+	if (is_array($attributes) AND count($attributes) > 0)
+	{
+		foreach ($attributes as $key => $val)
+		{
+			$uri .= ' ' . $key . '="' . $val . '"';
+		}
+	}
+
+	$uri .= '></img>';
+	return $uri;
 }
 
 ?>

@@ -4,10 +4,10 @@
 		<ul>
 		<?php foreach($query->result_array() as $digg_item) { ?>
 			<li>
-				<a class="avator" href="<?php echo 'user/show/' . $digg_item["user_name"]; ?>">
+				<a class="avator" href="<?php echo 'index.php/user/show/' . $digg_item["user_name"]; ?>">
 					<?php echo img($digg_item["avator_url"]); ?>
 				</a>
-				<a class="author" href="<?php echo 'user/show/' . $digg_item["user_name"]; ?>">
+				<a class="author" href="<?php echo 'index.php/user/show/' . $digg_item["user_name"]; ?>">
 					<?php echo $digg_item["user_name"]; ?>
 				</a>						
 				<span class="op">

@@ -10,7 +10,7 @@
 	<?php $this->load->view('templates/banner'); ?>
 	
 	<div class="content">		
-		<div class="board">
+		<div class="board">		
 			<?php $this->load->view($essential); ?>
 		</div>
 		<div class="clear"></div>

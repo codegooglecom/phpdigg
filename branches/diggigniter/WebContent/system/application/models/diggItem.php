@@ -12,12 +12,12 @@ class DiggItem extends Model {
 
 	var $gmt_create = '0000-00-00 00:00:00';
 
-	public function select($offset = 0, $pageSize = 10) {
+	public function select($orderby = 'digg_item.gmt_create', $offset = 0, $pageSize = 10) {
 		$this->db
 		->select('digg_item.*, digg_user.avator_url')
 		->from('digg_item')
 		->join('digg_user', 'digg_user.id = digg_item.user_id')
-		->orderby('digg_item.gmt_create', 'desc')
+		->orderby($orderby, 'desc')
 		->limit($pageSize, $offset);
 
 		$query = $this->db->get();
