@@ -6,5 +6,5 @@ include_once "controller/action/UserAction.php";
 $action = new UserAction();
 $user = $action->getLoginUser();
 $userProfile = $action->getUserProfile()->toJSONObject();
-$accountBinding = $action->getAccountBinding()->toJSONObject();
+$accountBinding = $action->getAccountBinding();
 ?>

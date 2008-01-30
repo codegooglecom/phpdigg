@@ -160,18 +160,49 @@
 	</div>
 	
 	<div id="im-bind-panel" class="g-tab-content">
-		<form id="im-bind-form" action="user.php?bindFF" method="post">				
-			<h3>绑定饭否帐号</h3>
+		<form id="tt-bind-form" action="user.php?bind" method="post">				
+			<h3>绑定Twitter帐号</h3>
 			<div class="form-field">
 				<label>用户名</label>
-				<input name="username" type="text" class="text" value="<?php echo $accountBinding['username']; ?>" />
+				<input name="username" type="text" class="text" value="<?php echo $accountBinding['tt']['username']; ?>" />
 			</div>
 			<div class="form-field">
 				<label>密码</label>
-				<input name="password" type="password" class="password" value="<?php echo base64_decode($accountBinding['password']); ?>" />
+				<input name="password" type="password" class="password" value="<?php echo base64_decode($accountBinding['tt']['password']); ?>" />
 			</div>				
 			<div class="form-field action">
-				<input id="im-bind-form-submit" type="submit" value="绑定" class="button"></input>
+				<input type="hidden" name="type" value="tt"/>
+				<input id="tt-bind-form-submit" type="submit" value="绑定" class="button"></input>
+			</div>
+		</form>
+		<form id="ff-bind-form" action="user.php?bind" method="post">				
+			<h3>绑定饭否帐号</h3>
+			<div class="form-field">
+				<label>用户名</label>
+				<input name="username" type="text" class="text" value="<?php echo $accountBinding['ff']['username']; ?>" />
+			</div>
+			<div class="form-field">
+				<label>密码</label>
+				<input name="password" type="password" class="password" value="<?php echo base64_decode($accountBinding['ff']['password']); ?>" />
+			</div>				
+			<div class="form-field action">
+				<input type="hidden" name="type" value="ff"/>
+				<input id="ff-bind-form-submit" type="submit" value="绑定" class="button"></input>
+			</div>
+		</form>
+		<form id="jw-bind-form" action="user.php?bind" method="post">				
+			<h3>绑定叽歪帐号</h3>
+			<div class="form-field">
+				<label>用户名</label>
+				<input name="username" type="text" class="text" value="<?php echo $accountBinding['jw']['username']; ?>" />
+			</div>
+			<div class="form-field">
+				<label>密码</label>
+				<input name="password" type="password" class="password" value="<?php echo base64_decode($accountBinding['jw']['password']); ?>" />
+			</div>				
+			<div class="form-field action">
+				<input type="hidden" name="type" value="jw"/>
+				<input id="jw-bind-form-submit" type="submit" value="绑定" class="button"></input>
 			</div>
 		</form>
 	</div>

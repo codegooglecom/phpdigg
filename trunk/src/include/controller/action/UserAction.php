@@ -242,8 +242,10 @@ class UserAction extends Action {
 		return $userProfile;
 	}
 
-	public function bindAccount($type = 'ff') {
+	public function bindAccount() {
 		$userId = $_COOKIE['userId'];
+		$type = $_POST['type'];
+		
 		$accountBinding = $this->accountBindingManager->findByUserId($userId, $type);
 
 		if ($accountBinding == NULL) {
@@ -271,7 +273,7 @@ class UserAction extends Action {
 
 	public function getAccountBinding($type = 'ff') {
 		$userId = $_COOKIE['userId'];
-		$accountBinding = $this->accountBindingManager->findByUserId($userId, $type);
+		$accountBinding = $this->accountBindingManager->findByUserId($userId, NULL);
 
 		if ($accountBinding == NULL) {
 			$accountBinding = new AccountBinding();

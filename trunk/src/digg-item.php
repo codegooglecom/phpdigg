@@ -34,16 +34,39 @@ if (isset($_GET["new"])) {
 		} else {
 			$accountBindingManager = new AccountBindingManager();
 			$userId = $_COOKIE['userId'];
-			$accountBinding = $accountBindingManager->findByUserId($userId, 'ff');
-			if ($accountBinding) {
+			$accountBinding = $accountBindingManager->findByUserId($userId);
+			if ($accountBinding['tt']['id'] || $accountBinding['ff']['id'] || $accountBinding['jw']['id']) {
 				include_once "lib/Snoopy.class.php";
+				include_once "lib/TwitterBase.class.php";
+				include_once "lib/Twitter.class.php";
 				include_once "lib/Fanfou.class.php";
-				$u = $accountBinding->getUsername();
-				$p = $accountBinding->getPassword();
-				$p = base64_decode($p);
-			
-				$ff = new Fanfou($u, $p);
-				$ff->update($_POST["content"]);
+				include_once "lib/Jiwai.class.php";
+				
+				foreach ($accountBinding as $type => $account) {
+					if ($account['id'] == NULL) {
+						continue;	
+					}
+					
+					$client = NULL;
+					$u = $account['username'];
+					$p = $account['password'];
+					$p = base64_decode($p);
+					
+					switch($type) {
+						case 'tt':
+							$client = new Twitter($u, $p);
+							break;
+						case 'ff':
+							$client = new Fanfou($u, $p);
+							break;
+						case 'jw':
+							$client = new Jiwai($u, $p);
+							break;
+					}
+					if ($client != NULL) {
+						$client->update($_POST["content"]);	
+					}
+				}
 			}
 		}		
 		
